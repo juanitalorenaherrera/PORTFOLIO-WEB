@@ -1,0 +1,1157 @@
+:root {
+  --color-fondo: #f0f0f0;
+  --color-texto: #333;
+  --color-header: rgba(170, 68, 68, 0.8);
+  --color-boton: #76c7c0;
+  --color-boton-hover: #65b2a7;
+  --color-skill: #999999;
+  --color-skill-background: #f0f0f0;
+  --color-fondo-rosa: rgba(76, 175, 80, 0.8);
+  --color-fondo-morado: rgba(186, 85, 211, 0.8);
+  --color-dark: #111;
+  --color-light: #fff;
+}
+
+/* Estilos Generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  padding: 20px;
+}
+
+.contenido-banner, .contenido-seccion {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.inicio {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Fondo en Movimiento */
+@keyframes moverFondo {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
+}
+
+.fondo-movimiento {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(120deg, #f5f5f5, #e0e0e0);
+  animation: moverFondo 10s infinite alternate;
+}
+
+/* Header */
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--color-header);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.5s ease;
+  visibility: visible; /* Asegura que sea siempre visible */
+  opacity: 1; /* Asegura que no esté oculto */
+}
+
+.contenedor-header.scrolled {
+  background-color: rgba(170, 68, 68, 1);
+}
+
+.logo {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+  background-color: #ffffff;
+  color: var(--color-header);
+}
+
+/* Sticky Header en Dispositivos Móviles */
+@media (max-width: 768px) {
+  .contenedor-header {
+    position: sticky; /* Permite que el menú siga visible en móviles */
+    top: 0;
+    background-color: var(--color-header);
+    visibility: visible; /* Asegura que el menú sea visible */
+    opacity: 1;
+  }
+
+  .navbar ul {
+    flex-direction: column; /* Menú en columna en móviles */
+    align-items: center;
+  }
+
+  .navbar ul li {
+    margin-bottom: 10px;
+  }
+}
+
+/* Animación de Texto */
+@keyframes aparecerTexto {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.inicio h1, .inicio h2 {
+  margin-top: 20px;
+  color: #444444;
+  opacity: 0;
+  animation: aparecerTexto 1s ease-in-out forwards;
+}
+
+/* Redes Sociales */
+.redes a {
+  margin: 0 10px;
+  color: #555555;
+  font-size: 20px;
+  transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+.redes a:hover {
+  transform: scale(1.2);
+  color: var(--color-boton);
+}
+
+/* Sección Skills */
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.barra-skill-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 10px 0;
+}
+
+.barra-skill {
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.progreso {
+  background: linear-gradient(135deg, rgba(0, 204, 255, 0.8), rgba(255, 105, 180, 0.8));
+  height: 20px;
+  color: white;
+  text-align: center;
+  font-size: 0.9em;
+  animation: llenarBarra 2s ease-in-out;
+}
+
+@keyframes llenarBarra {
+  from { width: 0; }
+  to { width: var(--porcentaje); }
+}
+
+/* Sección Portafolio */
+.portfolio {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contenedor-proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.proyecto {
+  background-color: #ffffff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.proyecto:hover {
+  transform: scale(1.05);
+}
+
+.proyecto img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.proyecto h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.proyecto p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.proyecto a {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: var(--color-boton);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.proyecto a:hover {
+  background-color: var(--color-boton-hover);
+}
+
+/* Formulario de Contacto */
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+input, textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #b3a6a6;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--color-boton);
+  outline: none;
+  box-shadow: 0 0 5px rgba(118, 199, 192, 0.7);
+}
+
+button {
+  padding: 10px;
+  background-color: var(--color-boton);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--color-boton-hover);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background-color: #444444;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 600px) {
+  .fila .col img {
+    width: 80%;
+    max-width: none;
+  }
+}
+
+.curriculum {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: var(--color-texto);
+}
+
+.curriculum h2, .curriculum h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.curriculum ul {
+  list-style: none;
+  padding: 0;
+}
+
+.curriculum li {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+/* Estilo general del curriculum */
+.curriculum {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos dentro del curriculum */
+.curriculum h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-header);
+}
+
+.curriculum h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: var(--color-header);
+}
+
+.curriculum ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilo para cada sección dentro del curriculum */
+.curriculum li {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/* Estilos para los enlaces de "Ver certificado" */
+.curriculum a {
+  color: var(--color-boton);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.curriculum a:hover {
+  color: var(--color-boton-hover);
+}
+
+/* Sección de Experiencia y Educación */
+.curriculum .section {
+  margin-bottom: 40px;
+}
+
+/* Diseño de las imágenes */
+.curriculum .image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.curriculum .image-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.curriculum .image-container img:hover {
+  transform: scale(1.1);
+}
+
+/* Para alinear los títulos y contenido en una cuadrícula (Grid) */
+.curriculum .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.curriculum .content div {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.curriculum .content div h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: var(--color-header);
+}
+
+.curriculum .content div p {
+  font-size: 1em;
+  color: var(--color-texto);
+  margin-bottom: 10px;
+}
+
+/* Sección de Habilidades */
+.habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.habilidades .habilidad {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex-basis: 48%;
+}
+
+.habilidades .habilidad h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.habilidades .habilidad p {
+  font-size: 1em;
+  color: var(--color-texto);
+}
+/* Contenedor de imágenes */
+.curriculum .image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;  /* Asegura que las imágenes se acomoden bien en pantallas pequeñas */
+}
+
+/* Estilo de las imágenes */
+.curriculum .image-container img {
+  width: 100px; /* Tamaño fijo */
+  height: 100px; /* Tamaño fijo */
+  object-fit: cover; /* Mantiene la proporción de la imagen sin estirarla */
+  border-radius: 50%; /* Hace las imágenes circulares */
+  margin-right: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de hover para las imágenes */
+.curriculum .image-container img:hover {
+  transform: scale(1.05); /* Sutil aumento de tamaño */
+}
+/* Estilo general para las imágenes del currículum */
+.curriculum img {
+  max-width: 150px;    /* Máximo de 150px de ancho */
+  max-height: 150px;   /* Máximo de 150px de alto */
+  width: 100%;         /* Permite que se ajusten al contenedor */
+  height: auto;        /* Mantiene la proporción */
+  object-fit: cover;   /* Asegura que la imagen se recorte de manera adecuada */
+  margin: 10px;        /* Espacio entre imágenes */
+  border-radius: 8px;  /* Opcional: hace bordes redondeados */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de hover para imágenes */
+.curriculum img:hover {
+  transform: scale(1.05); /* Sutil aumento al pasar el mouse */
+}
+
+/* Si tienes un contenedor específico de imágenes */
+.curriculum .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;  /* Alineación de imágenes */
+  gap: 20px;                     /* Espacio entre las imágenes */
+}
+/* Estilo para las imágenes de Skills */
+.skills img {
+  max-width: 80px;  /* Máximo de 80px de ancho */
+  max-height: 80px; /* Máximo de 80px de alto */
+  width: 100%;      /* Ajusta el ancho al 100% del contenedor */
+  height: auto;     /* Mantiene la proporción de la imagen */
+  object-fit: contain;  /* Asegura que la imagen se ajuste dentro del contenedor sin distorsión */
+  margin: 10px;     /* Espacio entre las imágenes */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de hover para imágenes de Skills */
+.skills img:hover {
+  transform: scale(1.1);  /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #111;  /* Fondo oscuro */
+  color: #f1f1f1; /* Texto claro */
+}
+
+header {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f1c40f;  /* Amarillo Batman */
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #e74c3c;  /* Rojo cuando pasas el mouse */
+}
+
+/* Secciones */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section h1, section h2 {
+  color: #f1c40f;
+  font-size: 2.5em;
+}
+
+section p {
+  font-size: 1.2em;
+  color: #bbb;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .navbar li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+/* Animación de desvanecimiento */
+section {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Esto asegura que el fondo cubra toda la altura de la página */
+  background: url('batman-background.jpg') no-repeat center center fixed; /* Cambia la URL por la de tu imagen */
+  background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+  font-family: Arial, sans-serif;
+  color: #fff; /* Color de texto blanco para contraste */
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido para el menú */
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color 0.3s;
+}
+
+#menu a:hover {
+  color: #ffcc00; /* Cambio de color al pasar el mouse sobre los enlaces */
+}
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.bat-animation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('bat-bats.png'); /* Reemplaza con la imagen de murciélagos */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: batMove 5s linear infinite;
+}
+
+@keyframes batMove {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+/* Fondo de Batman */
+body {
+  background-image: url('ruta/de/tu/imagen-de-batman.jpg'); /* Cambia la ruta a tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+  color: #f0f0f0; /* Ajusta el color del texto para contraste */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Estilo del menú */
+nav {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+/* Efecto de murciélagos alrededor del menú */
+nav ul li a::before,
+nav ul li a::after {
+  content: "🦇";
+  position: absolute;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover::before {
+  opacity: 1;
+  transform: translate(-20px, -10px);
+  left: -10px;
+}
+
+nav ul li a:hover::after {
+  opacity: 1;
+  transform: translate(20px, -10px);
+  right: -10px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: #111; /* Fondo oscuro para el menú */
+  padding: 10px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #FFD700; /* Color dorado para el texto */
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  transform: scale(1.1); /* Efecto al pasar el mouse */
+}
+/* Estilos para los murciélagos animados */
+.bat {
+  position: absolute;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.5s;
+}
+
+.bat-left {
+  left: -20px;
+  transform: translate(-20px, -10px);
+  opacity: 1;
+}
+
+.bat-right {
+  right: -20px;
+  transform: translate(20px, -10px);
+  opacity: 1;
+}
+/* Fondo de toda la página */
+body {
+  background-image: url('Batman\ background.jpg'); /* Asegúrate de colocar el camino correcto de tu imagen */
+  background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Hace que el fondo se mantenga fijo al hacer scroll */
+  color: white; /* Opcional: Cambia el color del texto para que sea visible sobre el fondo oscuro */
+}
+
+/* Ajustes adicionales para el menú */
+nav {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para el menú */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav ul li a {
+  color: #FFD700; /* Cambia el color del texto del menú a un dorado tipo Batman */
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Sombra de texto para darle un efecto más dramático */
+}
+
+/* Otros ajustes según el diseño que desees */
+/* Estilo del menú */
+#nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#nav ul li {
+  position: relative;
+  margin: 0 10px;
+}
+
+#nav ul li a {
+  color: #FFD700; /* Color dorado */
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  transition: color 0.3s;
+}
+
+/* Iconos de murciélagos */
+#nav ul li a::before,
+#nav ul li a::after {
+  content: "🦇"; /* Emoji de murciélago */
+  font-size: 16px;
+  color: #FFD700; /* Color dorado */
+  position: absolute;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+#nav ul li a::before {
+  left: -20px;
+  transform: translateX(-10px);
+}
+
+#nav ul li a::after {
+  right: -20px;
+  transform: translateX(10px);
+}
+
+/* Efecto hover para mostrar los murciélagos */
+#nav ul li a:hover::before,
+#nav ul li a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#nav ul li a:hover {
+  color: #FFF; /* Cambia el color del texto al pasar el mouse */
+}
+h1, h2 {
+  filter: none; /* Elimina cualquier desenfoque */
+  text-shadow: none; /* Elimina cualquier sombra que pueda hacer que el texto se vea nublado */
+}
+h1, h2 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.mi-introduccion {
+  border: 1px solid white; /* Agrega un borde alrededor del texto */
+  padding: 15px; /* Añade algo de espacio alrededor */
+}
+.portfolio {
+  padding: 2em 0;
+  text-align: center;
+}
+
+.contenedor-proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+
+.proyecto {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.proyecto img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.proyecto:hover {
+  transform: scale(1.05);
+}
+.contact-info {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.contact-icon {
+  color: #25D366; /* Color de WhatsApp */
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.contact-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #555;
+}
+/* Estilo para la barra de navegación */
+#nav {
+  padding: 10px 0;
+}
+
+/* Lista de navegación */
+#nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;  /* Espacio equitativo entre los elementos */
+}
+
+/* Estilo de cada elemento de lista */
+#nav li {
+  padding: 0 15px;  /* Espaciado horizontal entre los elementos */
+}
+
+/* Estilo para los enlaces de navegación */
+#nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px;  /* Espaciado entre el ícono y el texto */
+  text-decoration: none;
+  color: inherit;
+  padding: 5px 0;  /* Padding para dar un poco de espacio alrededor del texto */
+}
+
+/* Estilo para los íconos */
+#nav a i {
+  font-size: 18px;  /* Ajusta el tamaño de los íconos */
+}
+
+/* Efecto al pasar el mouse */
+#nav a:hover {
+  background-color: rgba(0, 0, 0, 0.1);  /* Fondo ligeramente oscuro cuando se pasa el cursor */
+  border-radius: 5px;  /* Bordes redondeados para los enlaces */
+}
+
+h1 {
+  color: #e74c3c; /* Rojo brillante */
+  font-family: Arial, sans-serif;
+  font-size: 3rem;
+  margin: 0;
+  padding: 10px 0;
+}
+
+h2 {
+  color: #c0392b; /* Rojo más oscuro */
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 5px 0;
+}
+.redes {
+  display: flex;
+  gap: 15px;
+}
+
+.redes a {
+  font-size: 2rem; /* Ajusta el tamaño de los iconos */
+  color: #000; /* Color de los iconos */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  transition: color 0.3s; /* Transición suave para el color */
+}
+
+.redes a:hover {
+  color: #3498db; /* Cambia el color al pasar el ratón por encima */
+}
+p {
+  font-size: 1.1rem; /* Ajusta el tamaño de la fuente si lo necesitas */
+  line-height: 1.6; /* Espaciado entre líneas para mayor legibilidad */
+  color: #333; /* Color oscuro para el texto */
+}
+
+.resaltado {
+  color: #FF5733; /* Color que elegiste */
+  font-weight: bold; /* Hace que se vea más destacado */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+  font-size: 1.2em; /* Tamaño mediano */
+  line-height: 1.5; /* Espaciado entre líneas para mejor legibilidad */
+}
+
+
+h1.resaltado, h2.resaltado {
+  font-size: 3em; /* Asegúrate de que el tamaño del h1 y h2 sea más grande que el del párrafo */
+  color: #f1c40f; /* Color vibrante */
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4); /* Sombra más fuerte para resaltar */
+}
+#sobremi h2 {
+  color: #f1c40f; /* Mismo color vibrante */
+  font-weight: bold;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+  font-size: 2em; /* Ajusta el tamaño si es necesario */
+}
+/* General font settings */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+/* Highlight class for uniform font size and color */
+.resaltado {
+  color: #f1c40f; /* Cambia "orange" por el tono exacto de naranja que prefieras */
+  font-weight: bold; /* Puedes ajustar el peso de la fuente si lo prefieres */
+}
+
+
+/* Header styling */
+h1 {
+  font-size: 2.5rem; /* Tamaño uniforme para h1 */
+  color: #333;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem; /* Tamaño uniforme para h2 */
+  color: #333;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem; /* Tamaño uniforme para h3 */
+  color: #444;
+  margin-top: 1em;
+}
+
+/* Curriculum section adjustments */
+.curriculum {
+  padding: 2em;
+}
+
+.curriculum h2 {
+  display: inline-block;
+  margin-right: 1em;
+  font-size: 2rem; /* Tamaño uniforme para Curriculum */
+}
+
+.download-cv {
+  font-size: 1rem;
+  margin-left: 1em;
+}
+
+.section {
+  margin-top: 1.5em;
+}
+
+.section h3 {
+  margin-top: 1.5em;
+}
+
+p {
+  font-size: 1rem; /* Tamaño mediano para párrafos */
+  line-height: 1.6;
+  margin-top: 1em;
+}
+
+.education-list li, .experience-list li, .volunteer-list li, .skills-list li {
+  margin-bottom: 0.5em;
+}
+
+/* Additional adjustments */
+.contacto p {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+.contact-form input, .contact-form textarea, .contact-form button {
+  font-size: 1rem;
+  margin-top: 0.5em;
+}
+/* Variables de color */
+:root {
+  --color-resaltado: #f1c40f; /* Naranja */
+  --color-texto-general: #333;
+}
+
+/* Estilo general */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-texto-general);
+}
+
+/* Resaltado para todos los elementos que usan esta clase */
+.resaltado, h1, h2 {
+  color: var(--color-resaltado);
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Tamaño específico de fuente */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+/* Espaciado entre Curriculum y Descargar CV */
+.curriculum {
+  padding: 2em;
+}
+
+.curriculum h2 {
+  display: inline-block;
+  margin-right: 1em;
+  font-size: 2rem;
+}
+
+.download-cv {
+  font-size: 1rem;
+  margin-left: 1em;
+}
+
+.section {
+  margin-top: 1.5em;
+}

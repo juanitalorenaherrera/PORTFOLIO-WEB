@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="App de emergencias para usuarios y paramédicos">
+    <meta name="keywords" content="emergencias, paramédicos, seguridad, alerta">
+    <title>Ambualert - Aplicación de Emergencias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="ruta_a_tu_favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>Ambualert</h1>
+        <nav>
+            <ul>
+                <li><button onclick="llamarUsuario()" aria-label="Llamar Usuario">LLAMAR USUARIO</button></li>
+                <li><button onclick="llamarParamedicos()" aria-label="Llamar Paramédicos">LLAMAR PARAMÉDICOS</button></li>
+                <li><img src="ambulancia.png" alt="Icono de ambulancia"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Sección de Emergencia Principal -->
+        <section class="emergencia-principal" id="inicio">
+            <h2>Emergencia</h2>
+            <button id="btn-llamada-emergencia" class="btn" aria-label="Llamar a Emergencias">Llamar a Emergencias</button>
+            <button id="btn-enviar-mensaje" class="btn" aria-label="Enviar Mensaje de Emergencia">Enviar Mensaje</button>
+            <div id="ubicacion-usuario"></div>
+        </section>
+
+        <!-- Información de Emergencia -->
+        <section class="emergency-info">
+            <h2>Información de Emergencia</h2>
+            <p>Esta página contiene información crucial en caso de emergencia.</p>
+            <div class="contact-numbers">
+                <h3>Números de Contacto</h3>
+                <p>Policía: 911</p>
+                <p>Asistencia Médica: 911</p>
+            </div>
+        </section>
+
+        <!-- Sección de Inicio de Sesión / Registro -->
+        <section class="inicio-sesion">
+            <h2>Inicio de Sesión / Registro</h2>
+            <form id="formulario-inicio-sesion">
+                <label for="correo-electronico">Correo electrónico:</label>
+                <input type="email" id="correo-electronico" name="correo-electronico" required>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+                <button type="submit" class="btn">Iniciar sesión</button>
+            </form>
+            <a href="#">¿No tienes una cuenta? Regístrate</a>
+        </section>
+    </main>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="emergency.jpg" alt="Ambualert">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Incendio</a></li>
+                    <li><a href="#">Accidente</a></li>
+                    <li><a href="#">Rescate</a></li>                   
+                    <li><a href="#">Auxilio</a></li>
+                    <li><a href="#">Otro</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section class="stats">
+                <div class="stat">
+                    <h3>Responder más rápido</h3>
+                    <p>100% Incremento</p>
+                </div>
+                <div class="stat">
+                    <h3>Tiempo de respuesta</h3>
+                    <p>12 min</p>
+                </div>
+                <div class="stat">
+                    <h3>Alertas activas</h3>
+                    <p>0 alertas</p>
+                </div>
+            </section>
+
+            <section class="charts">
+                <div class="chart">
+                    <h4>Estadísticas por Tipo</h4>
+                    <canvas id="chartTipo"></canvas>
+                </div>
+                <div class="recent-alerts">
+                    <h4>Últimas Alertas</h4>
+                    <ul>
+                        <li>Incendio en edificio </li>
+                        <li>Accidente de tráfico </li>
+                    </ul>
+                    <button class="btn">Ver todas</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js"></script>
+    <script>
+        // Función para llamar a usuarios
+        function llamarUsuario() {
+            alert("Llamando a los usuarios...");
+        }
+
+        // Función para llamar a paramédicos
+        function llamarParamedicos() {
+            alert("Llamando a los paramédicos...");
+        }
+
+        // Función de geolocalización
+        const ubicacionUsuario = document.getElementById('ubicacion-usuario');
+
+        function obtenerUbicacion() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(mostrarPosicion);
+            } else {
+                ubicacionUsuario.innerHTML = "La geolocalización no es compatible con este navegador.";
+            }
+        }
+
+        function mostrarPosicion(position) {
+            ubicacionUsuario.innerHTML = "Latitud: " + position.coords.latitude + "<br>Longitud: " + position.coords.longitude;
+        }
+
+        window.onload = obtenerUbicacion;
+
+        // Validación básica del formulario
+        document.getElementById('formulario-inicio-sesion').addEventListener('submit', function(event) {
+            const correo = document.getElementById('correo-electronico').value;
+            const contrasena = document.getElementById('contrasena').value;
+
+            if (!correo || !contrasena) {
+                alert("Por favor, rellena todos los campos.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+ <!-- Pie de página -->
+ <footer>
+    <p>&copy; 2024 App de Emergencias | Desarrollado por JUANITA HERRERA</p>
+</footer>
