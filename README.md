@@ -7,8 +7,6 @@
 Después de dedicar dos años al voluntariado, decidí sumergirme en el mundo de la programación. Actualmente, he trabajado en proyectos como:  
 
 - **[CryptoGuard](index-Cryptoguard.html)** 🛡️ - Aplicación de cifrado de texto.  
-- **[Educrea](index-educrea.html)** 📚 - Plataforma educativa interactiva.  
-- **[Servicios de Ambulancia](index-ambualert.html)** 🚑 - Web de atención médica de emergencias.  
 - **[Barbería](index-barberia.html)** 💈 - Sitio web profesional para barbería.  
 
 ## 🛠️ Habilidades
@@ -30,7 +28,3 @@ Después de dedicar dos años al voluntariado, decidí sumergirme en el mundo de
 📩 **Email:** [juanitaherrera846@gmail.com](mailto:juanitaherrera846@gmail.com)  
 🔗 **LinkedIn:** [juanita-herrera](https://www.linkedin.com/in/juanita-herrera-329064277/)  
 🐙 **GitHub:** [juanitalorenaherrera](https://github.com/juanitalorenaherrera)  
-
----
-
-⭐ ¡No dudes en explorar mis proyectos y contribuir!  
