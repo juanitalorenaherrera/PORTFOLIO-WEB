@@ -16,7 +16,8 @@ Después de dedicar dos años al voluntariado, decidí sumergirme en el mundo de
 
 ## 🛠️ Habilidades
 
-- **Lenguajes y Tecnologías:** HTML, CSS, JavaScript, React  
+- **Lenguajes y Tecnologías:** HTML, CSS, JavaScript, React, typescrypt
+- astro
 - **Diseño UX/UI:** Creación de interfaces intuitivas y funcionales  
 - **Seguridad Web:** Aplicación de prácticas básicas de protección  
 - **Soft Skills:** Trabajo en equipo, creatividad, adaptación al cambio  
