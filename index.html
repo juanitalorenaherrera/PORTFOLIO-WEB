@@ -16,16 +16,20 @@
             <div class="logo">
                 Juanita<span>.</span>Dev
             </div>
+            <button id="hamburger" class="hamburger" aria-label="Abrir menú" aria-controls="main-menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav class="menu">
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certificaciones">certificaciones</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#certificaciones">Certificaciones</a></li>
+                    <li class="contact-mobile"><a href="#contacto" class="contactame-btn-mobile">Contáctame</a></li>
                 </ul>
             </nav>
-            <button class="contactame-btn">Contáctame</button>
         </div>
     </header>
 
@@ -40,7 +44,7 @@
 <p class="bio">
     Vengo del mundo de la empatía y el servicio, y he encontrado en la tecnología un nuevo lenguaje para seguir ayudando. Me enamoré del código por su poder para construir, resolver y conectar. Hoy camino con la mirada puesta en el desarrollo web, soñando con crear proyectos que no solo funcionen, sino que también inspiren.
 </p>
-                <a href="#contacto" class="cta-btn">
+                <!-- <a href="#contacto" class="cta-btn">
                     Ver mi trabajo <i class="fas fa-arrow-right"></i>
                 </a>
                 <div class="social-icons">
@@ -54,7 +58,7 @@
                         <i class="fab fa-github"></i>
                     </a>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -172,37 +176,795 @@
 
     <section id="certificaciones" class="section">
         <div class="container">
-            <h2 class="section-title">Certificaciones</h2>
-            <ul class="certificates-list">
-                <li class="certificate-item">
-                    <h3 class="certificate-title">Programador Junior especializado en Back-End</h3>
-                    <div class="certificate-institution">Oracle Next Education - Alura Latam (2024)</div>
-                </li>
-                <li class="certificate-item">
-                    <h3 class="certificate-title">Diplomado en Desarrollo de Aplicaciones Web</h3>
-                    <div class="certificate-institution">Universidad Sergio Arboleda (2023)</div>
-                    <p class="certificate-desc">Formación especializada en desarrollo web moderno.</p>
-                    <a href="WEB.pdf" target="_blank" class="certificate-link">Ver certificado <i class="fas fa-external-link-alt"></i></a>
-                </li>
-                <li class="certificate-item">
-                    <h3 class="certificate-title">Diplomado en Desarrollo de Software</h3>
-                    <div class="certificate-institution">Universidad Sergio Arboleda (2023)</div>
-                    <p class="certificate-desc">Formación completa en metodologías de desarrollo de software.</p>
-                    <a href="SOFTWARE.pdf" target="_blank" class="certificate-link">Ver certificado <i class="fas fa-external-link-alt"></i></a>
-                </li>
-                <li class="certificate-item">
-                    <h3 class="certificate-title">Diplomado en Inteligencia Artificial</h3>
-                    <div class="certificate-institution">Universidad Distrital Francisco José de Caldas (2023-2024)</div>
-                    <p class="certificate-desc">Formación especializada en IA y sus aplicaciones.</p>
-                    <a href="INTELIGENCIA ARTIFICIAL.pdf" target="_blank" class="certificate-link">Ver certificado <i class="fas fa-external-link-alt"></i></a>
-                </li>
-                <li class="certificate-item">
-                    <h3 class="certificate-title">Diplomado de Inglés (Nivel A1)</h3>
-                    <div class="certificate-institution">British Council (2023)</div>
-                    <p class="certificate-desc">Formación básica en idioma inglés.</p>
-                    <a href="INGLES.pdf" target="_blank" class="certificate-link">Ver certificado <i class="fas fa-external-link-alt"></i></a>
-                </li>
-            </ul>
+            <h2 class="section-title">Mis Certificaciones</h2>
+            <p class="section-subtitle">Libro de mis 49+ certificados y logros académicos</p>
+            
+            <div class="book-container">
+                <button class="book-prev" id="prevPage"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="book-pages">
+                    <!-- PÁGINA 1 -->
+                    <div class="book-page active">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Soft Skills</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Hábitos: Ser Productivo para Cumplir sus Metas Personales</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category fullstack">Programación</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Lógica de Programación: Explorar Funciones y Listas</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 2 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category fullstack">Frontend</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>HTML5 y CSS3 Parte 1: Mi Primera Página Web</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category fullstack">Frontend</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>HTML5 y CSS3 Parte 2: Posicionamiento, Listas y Navegación</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 3 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category fullstack">Frontend</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>HTML5 y CSS3 Parte 3: Trabajando con Formularios y Tablas</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category software">Git</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Git y GitHub: Repositorio, Commit y Versiones</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 4 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Desarrollo Personal</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Desarrollo Personal G6 - ONE</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">JavaScript</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Lógica de Programación con JavaScript</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 5 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category software">Sistemas</span>
+                                    <span class="cert-date">2025</span>
+                                </div>
+                                <h4>Linux: Conociendo y Utilizando la Terminal</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category software">Redes</span>
+                                    <span class="cert-date">2025</span>
+                                </div>
+                                <h4>Redes: Introducción, Conceptos y Práctica</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 6 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category ai">Oracle Cloud</span>
+                                    <span class="cert-date">2025</span>
+                                </div>
+                                <h4>Certificación Oracle Cloud Infrastructure: Fundamentos Clave y Servicios Esenciales</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category ai">Oracle Cloud</span>
+                                    <span class="cert-date">2025</span>
+                                </div>
+                                <h4>Certificación Oracle Cloud: Gestión de Datos, Seguridad y Gobernanza</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 7 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category ai">Oracle Cloud</span>
+                                    <span class="cert-date">2025</span>
+                                </div>
+                                <h4>Entrega Certificación OCI Foundations Associate</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Finalización</span>
+                                    <span class="cert-date">2025</span>
+                                </div>
+                                <h4>Certificado de Finalización del Programa ONE</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 8 - Para agregar más certificados -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category software">Desarrollo</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Diplomado en Desarrollo de Aplicaciones Web</h4>
+                                <p class="cert-institution">Universidad Sergio Arboleda</p>
+                                <a href="WEB.pdf" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category software">Software</span>
+                                    <span class="cert-date">2023</span>
+                                </div>
+                                <h4>Diplomado en Desarrollo de Software</h4>
+                                <p class="cert-institution">Universidad Sergio Arboleda</p>
+                                <a href="SOFTWARE.pdf" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 9 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category ai">Inteligencia Artificial</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Diplomado en Inteligencia Artificial</h4>
+                                <p class="cert-institution">Universidad Distrital Francisco José de Caldas</p>
+                                <a href="INTELIGENCIA ARTIFICIAL.pdf" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category idiomas">Idiomas</span>
+                                    <span class="cert-date">2023</span>
+                                </div>
+                                <h4>Diplomado de Inglés - Nivel A1</h4>
+                                <p class="cert-institution">British Council</p>
+                                <a href="INGLES.pdf" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 10 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Java</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Java: Creando tu Primera Aplicación</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Java</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Java: Aplicando la Orientación a Objetos</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 11 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Java</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Java: Trabajar con Listas y Colecciones de Datos</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Java</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Java: Consumir API, Escribir Archivos y Manejar Errores</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 12 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Java</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Practicando con Java: Challenge Conversor de Monedas</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Java</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Java: Trabajando con Lambdas, Streams y Spring Framework</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 13 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Java</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Java: Persistencia de Datos y Consultas con Spring Data JPA</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">API</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Java: Creando tu Primera API y Conectándola al Front-End</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 14 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Spring Boot</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Spring Boot 3: Desarrollar una API REST en Java</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Spring Boot</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Spring Boot 3: Aplique las Mejores Prácticas y Proteja una API REST</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 15 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Soft Skills</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Emprendimiento: De la Idea al Plan de Negocios</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Soft Skills</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Fundamentos de Agilidad: Primeros Pasos para la Transformación Ágil</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 16 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category backend">Carrera</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Mi Carrera - Formación General</h4>
+                                <p class="cert-institution">Oracle Next Education - Alura Latam</p>
+                                <a href="#" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item placeholder">
+                                <p class="placeholder-text">Espacio para más certificados...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PÁGINAS GENERADAS AUTOMÁTICAMENTE: ALURA -->
+                    <!-- PÁGINA 17 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-03-05 095316</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-03-05%20095316.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-03-29 115117</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-03-29%20115117.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 18 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-04-05 195833</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-04-05%20195833.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-04-12 162611</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-04-12%20162611.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 19 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-04-16 144113</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-04-16%20144113.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-04-17 123054</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-04-17%20123054.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 20 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-05-02 122429</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-05-02%20122429.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-05-02 123924</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-05-02%20123924.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 21 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-05-08 131937</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-05-08%20131937.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-06-06 203033</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-06-06%20203033.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 22 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-07-11 112512</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-07-11%20112512.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-07-16 124548</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-07-16%20124548.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 23 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-07-16 124917</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-07-16%20124917.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-07-16 124955</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-07-16%20124955.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 24 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-07-16 150006</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-07-16%20150006.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-07-16 151514</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-07-16%20151514.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 25 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-07-16 153750</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-07-16%20153750.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-07-16 154622</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-07-16%20154622.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 26 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-07-16 164523</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-07-16%20164523.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-07-16 165015</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%202%20FASE/Captura%20de%20pantalla%202024-07-16%20165015.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 27 - ALURA 3 FASE -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-01-20 124727</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%203%20FASE/Captura%20de%20pantalla%202024-01-20%20124727.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-01-24 110032</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%203%20FASE/Captura%20de%20pantalla%202024-01-24%20110032.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 28 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-01-24 131146</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%203%20FASE/Captura%20de%20pantalla%202024-01-24%20131146.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-01-24 153805</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%203%20FASE/Captura%20de%20pantalla%202024-01-24%20153805.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 29 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-02-01 111104</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%203%20FASE/Captura%20de%20pantalla%202024-02-01%20111104.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-02-08 113607</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%203%20FASE/Captura%20de%20pantalla%202024-02-08%20113607.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 30 -->
+                    <div class="book-page">
+                        <div class="page-left">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-02-16 142048</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%203%20FASE/Captura%20de%20pantalla%202024-02-16%20142048.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                        <div class="page-right">
+                            <div class="cert-item">
+                                <div class="cert-header">
+                                    <span class="cert-category alura">Alura</span>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                                <h4>Captura: 2024-02-21 190624</h4>
+                                <p class="cert-institution">Alura Latam</p>
+                                <a href="../../ALURA/ALURA%203%20FASE/Captura%20de%20pantalla%202024-02-21%20190624.png" target="_blank" class="cert-view">Ver certificado →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="book-next" id="nextPage"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+                <div class="book-indicators">
+                <span class="page-indicator">Página <span id="currentPage">1</span> de <span id="totalPages">30</span></span>
+            </div>
         </div>
     </section>
 
@@ -321,49 +1083,152 @@
     </footer>
 
     <script>
-        // Función para el desplazamiento suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
+        (function() {
+            // helper that manages the book navigation (works for static or dynamic pages)
+            function initBookNavigation() {
+                const bookPages = document.querySelectorAll('.book-page');
+                const prevBtn = document.getElementById('prevPage');
+                const nextBtn = document.getElementById('nextPage');
+                const currentPageSpan = document.getElementById('currentPage');
+                const totalPagesSpan = document.getElementById('totalPages');
+
+                let currentPageIndex = 0;
+
+                if (totalPagesSpan) {
+                    totalPagesSpan.textContent = bookPages.length;
+                }
+
+                function showBookPage(index) {
+                    bookPages.forEach(p => p.classList.remove('active'));
+                    if (bookPages[index]) {
+                        bookPages[index].classList.add('active');
+                        if (currentPageSpan) {
+                            currentPageSpan.textContent = index + 1;
+                        }
+                    }
+                }
+
+                // display first page (if any)
+                showBookPage(currentPageIndex);
+
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        currentPageIndex = (currentPageIndex + 1) % bookPages.length;
+                        showBookPage(currentPageIndex);
                     });
                 }
-            });
-        });
 
-        // Botón de contacto
-        document.querySelector('.contactame-btn').addEventListener('click', function() {
-            const contactoSection = document.querySelector('#contacto');
-            if (contactoSection) {
-                window.scrollTo({
-                    top: contactoSection.offsetTop - 70,
-                    behavior: 'smooth'
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        currentPageIndex = (currentPageIndex - 1 + bookPages.length) % bookPages.length;
+                        showBookPage(currentPageIndex);
+                    });
+                }
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight') {
+                        currentPageIndex = (currentPageIndex + 1) % bookPages.length;
+                        showBookPage(currentPageIndex);
+                    } else if (e.key === 'ArrowLeft') {
+                        currentPageIndex = (currentPageIndex - 1 + bookPages.length) % bookPages.length;
+                        showBookPage(currentPageIndex);
+                    }
                 });
             }
-        });
 
-        // Animación al hacer scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(10, 10, 10, 0.95)';
-                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.5)';
-            } else {
-                header.style.background = 'rgba(15, 15, 15, 0.95)';
-                header.style.boxShadow = 'none';
+            // carga dinámica de certificados (si existe el JSON)
+            async function loadCerts() {
+                try {
+                    const res = await fetch('data/certs.json');
+                    if (res.ok) {
+                        const certs = await res.json();
+                        if (Array.isArray(certs) && certs.length) {
+                            const pagesContainer = document.querySelector('.book-pages');
+                            if (pagesContainer) {
+                                const pages = [];
+                                for (let i = 0; i < certs.length; i += 2) {
+                                    const left = certs[i];
+                                    const right = certs[i + 1];
+                                    const leftHtml = left ? `
+                                        <div class="page-left">
+                                            <div class="cert-item">
+                                                <div class="cert-header">
+                                                    <span class="cert-category ${left.category}">${left.categoryLabel || ''}</span>
+                                                    <span class="cert-date">${left.year || ''}</span>
+                                                </div>
+                                                <h4>${left.title || ''}</h4>
+                                                <p class="cert-institution">${left.institution || ''}</p>
+                                                <a href="${left.file || '#'}" target="_blank" class="cert-view">Ver certificado →</a>
+                                            </div>
+                                        </div>` : `
+                                        <div class="page-left">
+                                            <div class="cert-item placeholder">
+                                                <p class="placeholder-text">Espacio para más certificados...</p>
+                                            </div>
+                                        </div>`;
+
+                                    const rightHtml = right ? `
+                                        <div class="page-right">
+                                            <div class="cert-item">
+                                                <div class="cert-header">
+                                                    <span class="cert-category ${right.category}">${right.categoryLabel || ''}</span>
+                                                    <span class="cert-date">${right.year || ''}</span>
+                                                </div>
+                                                <h4>${right.title || ''}</h4>
+                                                <p class="cert-institution">${right.institution || ''}</p>
+                                                <a href="${right.file || '#'}" target="_blank" class="cert-view">Ver certificado →</a>
+                                            </div>
+                                        </div>` : `
+                                        <div class="page-right">
+                                            <div class="cert-item placeholder">
+                                                <p class="placeholder-text">Espacio para más certificados...</p>
+                                            </div>
+                                        </div>`;
+
+                                    const pageHtml = `<div class="book-page">${leftHtml}${rightHtml}</div>`;
+                                    pages.push(pageHtml);
+                                }
+                                pagesContainer.innerHTML = pages.join('\n');
+                                const totalSpan = document.getElementById('totalPages');
+                                if (totalSpan) totalSpan.textContent = pages.length;
+                            }
+                        }
+                    }
+                } catch (e) {
+                    // Si no existe data/certs.json o hay error, se mantiene el contenido estático
+                    console.warn('No se pudieron cargar certificados dinámicos:', e);
+                } finally {
+                    // después de intentar cargar, inicializa la navegación
+                    initBookNavigation();
+                }
             }
-        });
+
+            loadCerts();
+
+            // Función para el desplazamiento suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
+
+
 
 
 
