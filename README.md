@@ -32,7 +32,7 @@ Plataforma web de emergencias con frontend y backend integrados, diseñada para 
 **Lenguajes y Tecnologías:**  
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,react,nodejs,cs,dotnet,git,github,mongodb,vscode" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,react,cs,git,github,mongodb,vscode" />
 </p>
 
 **Diseño UX/UI:** Creación de interfaces intuitivas y funcionales  
