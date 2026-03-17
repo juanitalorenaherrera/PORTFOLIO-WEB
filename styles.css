@@ -156,6 +156,19 @@ header {
   padding-right: 50px;
 }
 
+/* name and photo inline */
+.name-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
 .developer-label {
   color: #888;
   font-size: 18px;
@@ -1260,4 +1273,82 @@ section{
 
 ::-webkit-scrollbar-thumb:hover{
   background: var(--rojo-hover);
+}
+
+
+/* =================================
+   FIXES Y MEJORAS DE ESTABILIDAD
+================================= */
+
+/* Animación que usas pero no estaba definida */
+@keyframes float {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-12px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+/* Mejora de renderizado general */
+html{
+  scroll-behavior: smooth;
+}
+
+/* Evita que imágenes se deformen */
+img{
+  max-width: 100%;
+  display: block;
+}
+
+/* Mejora consistencia de botones */
+button{
+  cursor: pointer;
+}
+
+/* Mejora rendimiento de animaciones */
+.skill-card,
+.project-card,
+.cert-item,
+.timeline-content{
+  will-change: transform;
+}
+
+/* Evita que el header tape secciones al hacer scroll */
+section{
+  scroll-margin-top: 90px;
+}
+
+/* Mejora del menú móvil */
+.menu.open{
+  display: flex !important;
+}
+
+/* Mejora transición de cards */
+.project-card,
+.skill-card{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Mejora hover certificados */
+.cert-item{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optimización del hero */
+.hero{
+  min-height: 100vh;
+}
+
+/* Mejora visual del timeline */
+.timeline-content{
+  border-left: 3px solid var(--rojo);
+}
+
+/* Evita overflow raro en móviles */
+body{
+  overflow-x: hidden;
 }
