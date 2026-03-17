@@ -534,11 +534,56 @@ header {
   }
 }
 
-.page-left, .page-right {
-  display: flex;
-  align-items: center;
+#certificados {
+  padding: 60px 20px;
+  text-align: center;
 }
 
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.certificados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.cert-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.2s;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+}
+
+.cert-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.cert-card h3 {
+  margin-bottom: 10px;
+}
+
+.cert-card p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.cert-card a {
+  text-decoration: none;
+  color: white;
+  background: #0077ff;
+  padding: 8px 15px;
+  border-radius: 6px;
+}
 /* Estilo de certificados */
 .cert-item {
   background: rgba(255, 255, 255, 0.05);
@@ -649,20 +694,6 @@ header {
 .cert-view:hover {
   color: #ff4d5f;
   transform: translateX(3px);
-}
-
-/* Indicadores de página */
-.book-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.page-indicator {
-  color: #aaa;
-  font-size: 14px;
-  font-weight: 500;
 }
 
 #currentPage, #totalPages {
