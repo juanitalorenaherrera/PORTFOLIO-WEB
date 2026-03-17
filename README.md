@@ -30,12 +30,10 @@ Plataforma web de emergencias con frontend y backend integrados, diseñada para 
 ## 🛠️ Habilidades
 
 **Lenguajes y Tecnologías:**  
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) 
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) 
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) 
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) 
-![Astro](https://img.shields.io/badge/Astro-FF5F75?style=for-the-badge&logo=astro&logoColor=white)
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,react,nodejs,cs,dotnet,git,github,mongodb,vscode" />
+</p>
 
 **Diseño UX/UI:** Creación de interfaces intuitivas y funcionales  
 **Seguridad Web:** Aplicación de prácticas básicas de protección  
@@ -45,10 +43,16 @@ Plataforma web de emergencias con frontend y backend integrados, diseñada para 
 
 ## 📜 Certificaciones
 
-🎓 **Programador Junior** — Oracle Next Education - Alura Latam (2024)  
-🎓 **Desarrollo Web y Software** — Universidad Sergio Arboleda (2023)  
-🎓 **Inteligencia Artificial** — Universidad Distrital Francisco José de Caldas (2023-2024)  
-🎓 **Inglés A1** — British Council (2023)
+🎓 **Oracle Cloud Infrastructure Foundations Associate**  
+🎓 **Oracle Cloud Infrastructure – Fundamentos**  
+🎓 **OCI – Seguridad y Gobernanza**  
+🎓 **Spring Boot 3 – API REST**  
+🎓 **Spring Boot – Seguridad en API**  
+🎓 **Java – Persistencia con JPA**  
+🎓 **Java – API conectada al Frontend**  
+🎓 **Java – Orientación a Objetos**
+
+> Todos los certificados se muestran en la sección correspondiente de mi portafolio web y están disponibles como imágenes y PDFs descargables.
 
 ---
 
