@@ -51,6 +51,7 @@ Plataforma web de emergencias con frontend y backend integrados, diseñada para 
 🎓 **Java – Persistencia con JPA**  
 🎓 **Java – API conectada al Frontend**  
 🎓 **Java – Orientación a Objetos**
+🎓 Inmersión Agentes de IA – Alura 🤖
 
 > Todos los certificados se muestran en la sección correspondiente de mi portafolio web y están disponibles como imágenes y PDFs descargables.
 
