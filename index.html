@@ -4,532 +4,690 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juanita Lorena Herrera Herrera - Portafolio</title>
+    <title>Juanita Herrera | Desarrolladora Web</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-black: #0a0a0a;
+            --bg-card: #111111;
+            --primary: #ffffff;
+            --secondary: #888888;
+            --accent: #ff3e3e; /* Un rojo vibrante similar al de la referencia */
+            --border: rgba(255, 255, 255, 0.1);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-main);
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Fondo con cuadrícula sutil */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Minimalista */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .profile-container {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 24px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            padding: 5px;
+            background: var(--bg-card);
+        }
+
+        .dev-tag {
+            background: var(--accent);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            color: var(--secondary);
+            max-width: 600px;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--bg-black);
+        }
+
+        .btn-primary:hover {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--border);
+            transform: translateY(-2px);
+        }
+
+        /* Secciones */
+        .section {
+            padding: 120px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        /* Proyectos Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px; /* Espacio mínimo para simular bordes de cuadrícula */
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        .project-card {
+            background: var(--bg-black);
+            padding: 3rem;
+            transition: background 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            background: var(--bg-card);
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--secondary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            color: var(--secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            background: #1a1a1a;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--secondary);
+        }
+
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link i {
+            font-size: 0.7rem;
+            transition: transform 0.3s;
+        }
+
+        .project-link:hover i {
+            transform: translate(3px, -3px);
+        }
+
+        /* Skills */
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            border-color: var(--primary);
+            background: var(--bg-card);
+        }
+
+        .skill-item i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .projects-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .project-card { padding: 2rem; }
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                Juanita<span>.</span>Dev
-            </div>
-            <button id="hamburger" class="hamburger" aria-label="Abrir menú" aria-controls="main-menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav class="menu">
+        <div class="container nav-container">
+            <div class="logo">Juanita<span>.</span>Dev</div>
+            <nav>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-mi">Sobre Mí</a></li>
-                    <li><a href="#experiencia">Experiencia</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#certificaciones">certificaciones</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
-                    <li class="contact-mobile"><a href="#contacto" class="contactame-btn-mobile">Contáctame</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#certificaciones">Certificaciones</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
+            <a href="mailto:juanitaherrera846@gmail.com" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.75rem;">Contacto</a>
         </div>
     </header>
 
     <section id="inicio" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <img src="JH LOGO.jpg" alt="Foto de perfil" class="profile-img">
-
-                <div class="developer-label">Programador Junior</div>
-               <h1 class="greeting">Hola soy</h1>
-<h2 class="name">Juanita Herrera</h2>
-<p class="bio">
-    Vengo del mundo de la empatía y el servicio, y he encontrado en la tecnología un nuevo lenguaje para seguir ayudando. Me enamoré del código por su poder para construir, resolver y conectar. Hoy camino con la mirada puesta en el desarrollo web, soñando con crear proyectos que no solo funcionen, sino que también inspiren.
-</p>
-                <!-- <a href="#contacto" class="cta-btn">
-                    Ver mi trabajo <i class="fas fa-arrow-right"></i>
-                </a>
-                <div class="social-icons">
-                    <a href="mailto:juanitaherrera846@gmail.com" class="social-icon">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/juanita-herrera-329064277/" class="social-icon" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/juanitalorenaherrera" class="social-icon" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    </a>
-                </div> -->
+            <div class="profile-container">
+                <img src="JH LOGO.jpg" alt="Juanita Herrera" class="profile-img">
+            </div>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                <span class="dev-tag">Programadora Junior</span>
+                <span class="dev-tag" style="background: transparent; border: 1px solid var(--accent); color: var(--accent);">3 Años de Experiencia</span>
+            </div>
+            <h1>Hola, soy<br>Juanita Herrera</h1>
+            <p>Transformo ideas en soluciones digitales con un enfoque en la empatía y el impacto social. Con más de 3 años de trayectoria en el ecosistema tecnológico, me especializo en crear experiencias Frontend excepcionales con React.</p>
+            <div class="cta-group" style="justify-content: center;">
+                <a href="https://github.com/juanitalorenaherrera" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/juanita-herrera-329064277/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
             </div>
         </div>
     </section>
 
     <section id="sobre-mi" class="section">
         <div class="container">
-            <h2 class="section-title">Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-text">
-                <p class="resaltado">
-<p>
-    Hola, soy <strong>Juanita Lorena Herrera Herrera</strong>, una entusiasta de la tecnología y los videojuegos que encontró en la programación una forma de convertir ideas en herramientas útiles.
-    Después de dos años de voluntariado en una fundación, decidí abrirme camino en el mundo digital para seguir ayudando, pero desde otro frente: el del desarrollo web.
-</p>
-
-<p>
-    He trabajado en proyectos como <strong>CryptoGuard</strong>, una aplicación de cifrado de texto; una plataforma educativa interactiva; el <strong>Juego Secreto</strong>, centrado en lógica e interacción; un <strong>Juego de Memoria</strong> orientado al aprendizaje lúdico; y <strong>AmbuAlert</strong>, una aplicación web de emergencias diseñada para ofrecer soluciones accesibles en situaciones críticas.
-</p>
-
-<p>
-    Creo firmemente en el aprendizaje constante.
-    Me sigo formando y mejorando día a día en tecnologías como <strong>HTML, CSS, JavaScript</strong> y <strong>React</strong>, con el objetivo de convertirme en una desarrolladora web integral y participar en proyectos que no solo funcionen bien, sino que también hagan la diferencia.
-</p>
-
-
+            <div class="section-header">
+                <span class="section-tag">Trayectoria</span>
+                <h2 class="section-title">Sobre Mí</h2>
+            </div>
+            <div class="glass-card" style="padding: 3rem; line-height: 1.8;">
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    Hola, soy <strong>Juanita Lorena Herrera Herrera</strong>, una entusiasta de la tecnología y los videojuegos que encontró en la programación una forma de convertir ideas en herramientas útiles.
+                </p>
+                <p style="margin-bottom: 1.5rem; color: var(--secondary);">
+                    Después de dos años de voluntariado en una fundación, decidí abrirme camino en el mundo digital para seguir ayudando, pero desde otro frente: el del <strong>desarrollo web</strong>. Mi vocación de servicio ahora se traduce en líneas de código que buscan resolver problemas reales.
+                </p>
+                <p style="margin-bottom: 1.5rem; color: var(--secondary);">
+                    He trabajado en proyectos diversos como <strong>CryptoGuard</strong> (cifrado de texto), plataformas educativas interactivas, el <strong>Juego Secreto</strong> (lógica e interacción), un <strong>Juego de Memoria</strong> orientado al aprendizaje lúdico y <strong>AmbuAlert</strong>, una aplicación web de emergencias diseñada para ofrecer soluciones accesibles en situaciones críticas.
+                </p>
+                <p style="color: var(--secondary);">
+                    Creo firmemente en el aprendizaje constante. Me sigo formando y mejorando día a día en tecnologías como <strong>HTML, CSS, JavaScript y React</strong>, con el objetivo de convertirme en una desarrolladora web integral y participar en proyectos que no solo funcionen bien, sino que también <strong>hagan la diferencia</strong>.
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="experiencia" class="section">
+    <section id="proyectos" class="section">
         <div class="container">
-            <h2 class="section-title">Experiencia</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Octubre 2024</div>
-                        <h3 class="timeline-title">UX/UI Designer - NoCountry</h3>
-                        <p class="timeline-desc">Encargada del área de UX/UI. Adaptación de conocimientos en una plataforma de banca digital.</p>
+            <div class="section-header">
+                <span class="section-tag">Trabajos</span>
+                <h2 class="section-title">Proyectos Destacados</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span>2024</span>
+                        <span>Completado</span>
                     </div>
+                    <h3 class="project-title">CryptoGuard</h3>
+                    <p class="project-desc">Plataforma de cifrado de texto diseñada para la seguridad de mensajes, desarrollada con lógica avanzada en JavaScript.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <a href="https://crypto-guard-main.vercel.app/" target="_blank" class="project-link">VER DEMO <i class="fas fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2020 - 2021</div>
-                        <h3 class="timeline-title">Voluntaria - Fundación PROYECTO UNION</h3>
-                        <p class="timeline-desc">Ayudé a niños en situación de vulnerabilidad, brindando apoyo educativo y emocional.</p>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span>2024</span>
+                        <span>Completado</span>
                     </div>
+                    <h3 class="project-title">AmbuAlert</h3>
+                    <p class="project-desc">Aplicación web de emergencias diseñada para ofrecer soluciones accesibles y rápidas en situaciones críticas.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Tailwind</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                    <a href="#" class="project-link">VER DETALLES <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span>2023</span>
+                        <span>Práctica</span>
+                    </div>
+                    <h3 class="project-title">Juego Secreto</h3>
+                    <p class="project-desc">Un desafío interactivo de lógica y funciones, enfocado en la experiencia de usuario y el aprendizaje lúdico.</p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">DOM</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                    <a href="https://juego-secreto-ia.vercel.app/" target="_blank" class="project-link">VER DEMO <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <!-- Proyecto 4: PetCare -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span>2024</span>
+                        <span>Fullstack</span>
+                    </div>
+                    <h3 class="project-title">PetCare (PetPay)</h3>
+                    <p class="project-desc">Plataforma integral para conectar dueños de mascotas con cuidadores verificados. Incluye gestión de servicios, perfiles y reservas.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Tailwind</span>
+                        <span class="tag">Vite</span>
+                        <span class="tag">Shadcn UI</span>
+                    </div>
+                    <a href="https://frontend-pet-pay.vercel.app/" target="_blank" class="project-link">VER DEMO <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <!-- Proyecto 5: Podcast -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span>2024</span>
+                        <span>Frontend</span>
+                    </div>
+                    <h3 class="project-title">Código y Café</h3>
+                    <p class="project-desc">Landing page interactiva para un podcast de tecnología. Diseño vibrante enfocado en la comunidad y el contenido multimedia.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                    <a href="https://podcast-three-blush.vercel.app/" target="_blank" class="project-link">VER DEMO <i class="fas fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="skills" class="section">
-    <div class="container">
-        <h2 class="section-title">Skills</h2>
-
-        <div class="skills-container">
-
-            <!-- JavaScript -->
-            <div class="skill-card">
-                <img src="javascrpit.jpeg" alt="JavaScript">
-                <h3 class="skill-name">JavaScript</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 100%"></div>
-                </div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Capacidades</span>
+                <h2 class="section-title">Habilidades Técnicas</h2>
             </div>
-
-            <!-- HTML -->
-            <div class="skill-card">
-                <img src="html.jpg" alt="HTML">
-                <h3 class="skill-name">HTML</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 100%"></div>
-                </div>
+            <div class="skills-list">
+                <div class="skill-item"><i class="fab fa-js" style="color: #f7df1e;"></i> <span>JavaScript</span></div>
+                <div class="skill-item"><i class="fab fa-html5" style="color: #e34f26;"></i> <span>HTML5</span></div>
+                <div class="skill-item"><i class="fab fa-css3-alt" style="color: #1572b6;"></i> <span>CSS3</span></div>
+                <div class="skill-item"><i class="fab fa-react" style="color: #61dafb;"></i> <span>React JS</span></div>
+                <div class="skill-item"><i class="fas fa-palette" style="color: #00c4cc;"></i> <span>Canva</span></div>
+                <div class="skill-item"><i class="fas fa-vector-square" style="color: #000000; background: white; border-radius: 4px; padding: 2px;"></i> <span>Inkscape</span></div>
             </div>
-
-            <!-- CSS -->
-            <div class="skill-card">
-                <img src="css3.webp" alt="CSS">
-                <h3 class="skill-name">CSS</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 100%"></div>
-                </div>
-            </div>
-
-            <!-- React -->
-            <div class="skill-card">
-                <img src="REACT.png" alt="React">
-                <h3 class="skill-name">React JS</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 100%"></div>
-                </div>
-            </div>
-
-            <!-- Canva -->
-            <div class="skill-card">
-                <img src="CANVA.jpeg" alt="Canva">
-                <h3 class="skill-name">Canva</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 100%"></div>
-                </div>
-            </div>
-
-            <!-- Inkscape -->
-            <div class="skill-card">
-                <img src="INKSCAPE.jpeg" alt="Inkscape">
-                <h3 class="skill-name">Inkscape</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 100%"></div>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
- <section id="certificaciones" class="section">
-<div class="container">
-
-<h2 class="section-title">Certificaciones</h2>
-
-<div class="projects-grid">
-
-  <div class="project-card">
-    <h3 class="project-title">Oracle Cloud Infrastructure Foundations Associate</h3>
-    <p class="project-description">
-      Certificación en fundamentos de cloud computing en Oracle.
-    </p>
-    <img src="oracle-cloud-foundations.png.png" alt="Certificado Oracle Cloud Foundations" width="400">
-    <a href="oracle-cloud-foundations.pdf.pdf" target="_blank" class="project-link">Ver PDF</a>
-  </div>
-
-  <div class="project-card">
-    <h3 class="project-title">Oracle Cloud Infrastructure – Fundamentos</h3>
-    <p class="project-description">
-      Principios de computación, redes y almacenamiento en OCI.
-    </p>
-    <img src="oracle-cloud-fundamentos.png.png" alt="Certificado Oracle Cloud Fundamentos" width="400">
-    <a href="oracle-cloud-fundamentos.pdf.pdf" target="_blank" class="project-link">Ver PDF</a>
-  </div>
-
-  <div class="project-card">
-    <h3 class="project-title">Spring Boot 3 – API REST</h3>
-    <p class="project-description">
-      Creación de APIs REST con Java y Spring Boot.
-    </p>
-    <img src="springboot-api-rest.png.png" alt="Certificado Spring Boot API REST" width="400">
-    <a href="springboot-api-rest.pdf.pdf" target="_blank" class="project-link">Ver PDF</a>
-  </div>
-
-  <div class="project-card">
-    <h3 class="project-title">Spring Boot – Seguridad en API</h3>
-    <p class="project-description">
-      Buenas prácticas y validación de datos en backend.
-    </p>
-    <img src="springboot-seguridad-api.png.png" alt="Certificado Spring Boot Seguridad API" width="400">
-    <a href="springboot-seguridad-api.pdf.pdf" target="_blank" class="project-link">Ver PDF</a>
-  </div>
-
-  <div class="project-card">
-    <h3 class="project-title">Java – Persistencia con JPA</h3>
-    <p class="project-description">
-      Gestión de datos usando Spring Data JPA.
-    </p>
-    <img src="java-jpa-persistencia.png.png" alt="Certificado Java Persistencia JPA" width="400">
-    <a href="java-jpa-persistencia.pdf.pdf" target="_blank" class="project-link">Ver PDF</a>
-  </div>
-
-  <div class="project-card">
-    <h3 class="project-title">Java – API conectada al Frontend</h3>
-    <p class="project-description">
-      Backend conectado a frontend mediante servicios REST.
-    </p>
-    <img src="java-api-frontend.png.png" alt="Certificado Java API Frontend" width="400">
-    <a href="java-api-frontend.pdf.pdf" target="_blank" class="project-link">Ver PDF</a>
-  </div>
-
-  <div class="project-card">
-    <h3 class="project-title">Java – Orientación a Objetos</h3>
-    <p class="project-description">
-      Aplicación de encapsulación, herencia y polimorfismo.
-    </p>
-    <img src="java-orientacion-objetos.png.png" alt="Certificado Java Orientación a Objetos" width="400">
-    <a href="java-orientacion-objetos.pdf.pdf" target="_blank" class="project-link">Ver PDF</a>
-  </div>
-  <div class="project-card">
-    <h3 class="project-title">OCI – Seguridad y Gobernanza</h3>
-    <p class="project-description">
-      Gestión de identidades, acceso y seguridad de datos.
-    </p>
-    <img src="oracle-cloud-seguridad.png.png" alt="Certificado OCI Seguridad" width="400">
-    <a href="oracle-cloud-seguridad.pdf.pdf" target="_blank" class="project-link">Ver PDF</a>
-  </div>
-   <!-- IA PRIMERO (estratégico 🔥) -->
-  <div class="project-card">
-       <h3 class="project-title">Inmersión Agentes de IA</h3>
-    <p class="project-description">
-      Formación intensiva en agentes de inteligencia artificial, 
-      automatización y nuevas tecnologías.
-    </p>
-    <div class="certificado-img">
-      <img src="certificado-de-inmersion-IA-png.png" alt="Certificado Inmersión IA">
-      <div class="overlay">
-        <a href="certificado de inmersion IA pdf.pdf" target="_blank">Ver PDF</a>
-      </div>
-    </div>
- 
-    </div>
-</div>
-
-</div>
-</section>
-
-<section id="proyectos" class="section">
-    <div class="container">
-        <h2 class="section-title">Mis Proyectos</h2>
-
-        <div class="projects-grid">
-
-            <!-- CryptoGuard -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="logo-Crypto.png" alt="CryptoGuard">
+    <section id="certificaciones" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Logros</span>
+                <h2 class="section-title">Certificaciones</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Certificado 1 -->
+                <div class="project-card" style="padding: 1.5rem;">
+                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <img src="oracle-cloud-foundations.png" alt="OCI Foundations" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
+                    </div>
+                    <div class="project-meta"><span>Oracle Cloud</span><span>2024</span></div>
+                    <h3 class="project-title" style="font-size: 1rem;">OCI Foundations Associate</h3>
+                    <p class="project-desc" style="font-size: 0.75rem;">Certificación en fundamentos de cloud computing en Oracle.</p>
+                    <a href="oracle-cloud-foundations.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
-                <div class="project-info">
-                    <h3 class="project-title">CryptoGuard</h3>
-                    <p class="project-description">
-                        Un proyecto de cifrado de texto para encriptar y desencriptar mensajes, desarrollado en el marco de un curso de Oracle.
-                    </p>
-                    <a href="https://github.com/juanitalorenaherrera/CryptoGuard-main" target="_blank" class="project-link">Ver en GitHub</a>
-                    <a href="https://crypto-guard-main.vercel.app/" target="_blank" class="project-link">Ver Demo</a>
+
+                <!-- Certificado 2 -->
+                <div class="project-card" style="padding: 1.5rem;">
+                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <img src="oracle-cloud-fundamentos.png" alt="OCI Fundamentos" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
+                    </div>
+                    <div class="project-meta"><span>Oracle Cloud</span><span>2024</span></div>
+                    <h3 class="project-title" style="font-size: 1rem;">OCI – Fundamentos</h3>
+                    <p class="project-desc" style="font-size: 0.75rem;">Principios de computación, redes y almacenamiento en OCI.</p>
+                    <a href="oracle-cloud-fundamentos.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
+                </div>
+
+                <!-- Certificado 3 -->
+                <div class="project-card" style="padding: 1.5rem;">
+                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <img src="springboot-api-rest.png" alt="Spring Boot API" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
+                    </div>
+                    <div class="project-meta"><span>Java / Spring</span><span>2024</span></div>
+                    <h3 class="project-title" style="font-size: 1rem;">Spring Boot 3 – API REST</h3>
+                    <p class="project-desc" style="font-size: 0.75rem;">Creación de APIs REST con Java y Spring Boot.</p>
+                    <a href="springboot-api-rest.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
+                </div>
+
+                <!-- Certificado 4 -->
+                <div class="project-card" style="padding: 1.5rem;">
+                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <img src="springboot-seguridad-api.png" alt="Spring Boot Security" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
+                    </div>
+                    <div class="project-meta"><span>Java / Spring</span><span>2024</span></div>
+                    <h3 class="project-title" style="font-size: 1rem;">Spring Boot – Seguridad en API</h3>
+                    <p class="project-desc" style="font-size: 0.75rem;">Buenas prácticas y validación de datos en backend.</p>
+                    <a href="springboot-seguridad-api.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
+                </div>
+
+                <!-- Certificado 5 -->
+                <div class="project-card" style="padding: 1.5rem;">
+                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <img src="java-jpa-persistencia.png" alt="Java JPA" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
+                    </div>
+                    <div class="project-meta"><span>Java / JPA</span><span>2024</span></div>
+                    <h3 class="project-title" style="font-size: 1rem;">Java – Persistencia con JPA</h3>
+                    <p class="project-desc" style="font-size: 0.75rem;">Gestión de datos usando Spring Data JPA.</p>
+                    <a href="java-jpa-persistencia.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
+                </div>
+
+                <!-- Certificado 6 -->
+                <div class="project-card" style="padding: 1.5rem;">
+                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <img src="java-api-frontend.png" alt="Java API Frontend" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
+                    </div>
+                    <div class="project-meta"><span>Java / Fullstack</span><span>2024</span></div>
+                    <h3 class="project-title" style="font-size: 1rem;">Java – API conectada al Frontend</h3>
+                    <p class="project-desc" style="font-size: 0.75rem;">Backend conectado a frontend mediante servicios REST.</p>
+                    <a href="java-api-frontend.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
+                </div>
+
+                <!-- Certificado 7 -->
+                <div class="project-card" style="padding: 1.5rem;">
+                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <img src="java-orientacion-objetos.png" alt="Java OOP" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
+                    </div>
+                    <div class="project-meta"><span>Java / OOP</span><span>2023</span></div>
+                    <h3 class="project-title" style="font-size: 1rem;">Java – Orientación a Objetos</h3>
+                    <p class="project-desc" style="font-size: 0.75rem;">Aplicación de encapsulación, herencia y polimorfismo.</p>
+                    <a href="java-orientacion-objetos.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
+                </div>
+
+                <!-- Certificado 8 -->
+                <div class="project-card" style="padding: 1.5rem;">
+                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <img src="oracle-cloud-seguridad.png" alt="OCI Security" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
+                    </div>
+                    <div class="project-meta"><span>OCI / Security</span><span>2024</span></div>
+                    <h3 class="project-title" style="font-size: 1rem;">OCI – Seguridad y Gobernanza</h3>
+                    <p class="project-desc" style="font-size: 0.75rem;">Gestión de identidades, acceso y seguridad de datos.</p>
+                    <a href="oracle-cloud-seguridad.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
+                </div>
+
+                <!-- Certificado 9 -->
+                <div class="project-card" style="padding: 1.5rem;">
+                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <img src="certificado-inmersion-ia.png" alt="AI Inmersión" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
+                    </div>
+                    <div class="project-meta"><span>AI / Alura</span><span>2024</span></div>
+                    <h3 class="project-title" style="font-size: 1rem;">Inmersión Agentes de IA</h3>
+                    <p class="project-desc" style="font-size: 0.75rem;">Formación intensiva en agentes de IA y automatización.</p>
+                    <a href="certificado-inmersion-ia.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
             </div>
-
-            <!-- Juego Secreto -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="code.png" alt="Juego Secreto">
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">Juego Secreto</h3>
-                    <p class="project-description">
-                        Juego interactivo para adivinar un número secreto. Una práctica divertida de lógica y funciones en JavaScript.
-                    </p>
-                    <a href="https://github.com/juanitalorenaherrera/JUEGO-SECRETO" target="_blank" class="project-link">Ver en GitHub</a>
-                    <a href="https://juego-secreto-ia.vercel.app/" target="_blank" class="project-link">Ver Demo</a>
-                </div>
-            </div>
-
-            <!-- Juego de Memoria -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="memoria-logo.avif" alt="Juego de Memoria">
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">Juego de Memoria</h3>
-                    <p class="project-description">
-                        Un juego de memoria interactivo hecho con HTML, CSS y JavaScript. Pensado para entrenar la mente y dejar claro que la lógica también puede ser divertida.
-                    </p>
-                    <a href="https://github.com/juanitalorenaherrera/JUEGO-DE-MEMORIA" target="_blank" class="project-link">Ver en GitHub</a>
-                    <a href="https://juego-de-memoria-theta.vercel.app/" target="_blank" class="project-link">Ver Demo</a>
-                </div>
-            </div>
-
-            <!-- AmbuAlert -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="app-ambulalert.jpg" alt="AmbuAlert">
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">AmbuAlert</h3>
-                    <p class="project-description">
-                        Plataforma de emergencias con frontend y backend integrado. Diseñada para ofrecer una respuesta rápida y organizada ante situaciones críticas.
-                    </p>
-                    <a href="https://github.com/juanitalorenaherrera/AMBUALERT" target="_blank" class="project-link">Ver en GitHub</a>
-                    <a href="https://ambualert.vercel.app/" target="_blank" class="project-link">Ver Demo</a>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
-
+    </section>
 
     <section id="contacto" class="section">
         <div class="container">
-            <h2 class="section-title">Contáctame</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-detail">
-                            <h4>Email</h4>
-                            <a href="mailto:juanitaherrera846@gmail.com">juanitaherrera846@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
-                        <div class="contact-detail">
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/juanita-herrera-329064277/" target="_blank">Juanita Herrera</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-detail">
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/juanitalorenaherrera" target="_blank">juanitalorenaherrera</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-header" style="text-align: center;">
+                <span class="section-tag">Contacto</span>
+                <h2 class="section-title">¿Hablamos?</h2>
+                <p style="color: var(--secondary); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Estoy abierta a nuevas oportunidades y colaboraciones. La forma más segura y rápida de contactarme es a través de mi correo o LinkedIn.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
+                <!-- Correo -->
+                <a href="mailto:juanitaherrera846@gmail.com" class="glass-card" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; padding: 2.5rem; border: 1px solid var(--border); border-radius: 16px; transition: all 0.3s; background: var(--bg-card);">
+                    <i class="fas fa-envelope" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <span style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Email</span>
+                    <span style="color: var(--secondary); font-size: 0.85rem;">juanitaherrera846@gmail.com</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/juanita-herrera-329064277/" target="_blank" class="glass-card" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; padding: 2.5rem; border: 1px solid var(--border); border-radius: 16px; transition: all 0.3s; background: var(--bg-card);">
+                    <i class="fab fa-linkedin" style="font-size: 2rem; color: #0077b5; margin-bottom: 1rem;"></i>
+                    <span style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">LinkedIn</span>
+                    <span style="color: var(--secondary); font-size: 0.85rem;">Conectemos profesionalmente</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/juanitalorenaherrera" target="_blank" class="glass-card" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; padding: 2.5rem; border: 1px solid var(--border); border-radius: 16px; transition: all 0.3s; background: var(--bg-card);">
+                    <i class="fab fa-github" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <span style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">GitHub</span>
+                    <span style="color: var(--secondary); font-size: 0.85rem;">Mira mis repositorios</span>
+                </a>
+            </div>
+
+            <div style="margin-top: 4rem; text-align: center; padding: 2rem; border: 1px dashed var(--border); border-radius: 12px;">
+                <p style="color: var(--secondary); font-size: 0.9rem;">
+                    <i class="fas fa-shield-alt" style="margin-right: 0.5rem; color: var(--accent);"></i> 
+                    Por seguridad y para evitar spam, no comparto mi número de teléfono públicamente. <br>
+                    ¡Escríbeme por LinkedIn y con gusto coordinamos una llamada!
+                </p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Juanita Lorena Herrera Herrera. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Juanita Herrera. Hecho con ❤️ y código.</p>
         </div>
     </footer>
 
     <script>
-        (function() {
-            // helper that manages the book navigation (works for static or dynamic pages)
-            function initBookNavigation() {
-                const bookPages = document.querySelectorAll('.book-page');
-                const prevBtn = document.getElementById('prevPage');
-                const nextBtn = document.getElementById('nextPage');
-                const currentPageSpan = document.getElementById('currentPage');
-                const totalPagesSpan = document.getElementById('totalPages');
-
-                let currentPageIndex = 0;
-
-                if (totalPagesSpan) {
-                    totalPagesSpan.textContent = bookPages.length;
-                }
-
-                function showBookPage(index) {
-                    bookPages.forEach(p => p.classList.remove('active'));
-                    if (bookPages[index]) {
-                        bookPages[index].classList.add('active');
-                        if (currentPageSpan) {
-                            currentPageSpan.textContent = index + 1;
-                        }
-                    }
-                }
-
-                // display first page (if any)
-                showBookPage(currentPageIndex);
-
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', () => {
-                        currentPageIndex = (currentPageIndex + 1) % bookPages.length;
-                        showBookPage(currentPageIndex);
+        // Desplazamiento suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
                     });
                 }
-
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', () => {
-                        currentPageIndex = (currentPageIndex - 1 + bookPages.length) % bookPages.length;
-                        showBookPage(currentPageIndex);
-                    });
-                }
-
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'ArrowRight') {
-                        currentPageIndex = (currentPageIndex + 1) % bookPages.length;
-                        showBookPage(currentPageIndex);
-                    } else if (e.key === 'ArrowLeft') {
-                        currentPageIndex = (currentPageIndex - 1 + bookPages.length) % bookPages.length;
-                        showBookPage(currentPageIndex);
-                    }
-                });
-            }
-
-            // carga dinámica de certificados (si existe el JSON)
-            async function loadCerts() {
-                try {
-                    const res = await fetch('data/certs.json');
-                    if (res.ok) {
-                        const certs = await res.json();
-                        if (Array.isArray(certs) && certs.length) {
-                            const pagesContainer = document.querySelector('.book-pages');
-                            if (pagesContainer) {
-                                const pages = [];
-                                for (let i = 0; i < certs.length; i += 2) {
-                                    const left = certs[i];
-                                    const right = certs[i + 1];
-                                    const leftHtml = left ? `
-                                        <div class="page-left">
-                                            <div class="cert-item">
-                                                <div class="cert-header">
-                                                    <span class="cert-category ${left.category}">${left.categoryLabel || ''}</span>
-                                                    <span class="cert-date">${left.year || ''}</span>
-                                                </div>
-                                                <h4>${left.title || ''}</h4>
-                                                <p class="cert-institution">${left.institution || ''}</p>
-                                                <a href="${left.file || '#'}" target="_blank" class="cert-view">Ver certificado →</a>
-                                            </div>
-                                        </div>` : `
-                                        <div class="page-left">
-                                            <div class="cert-item placeholder">
-                                                <p class="placeholder-text">Espacio para más certificados...</p>
-                                            </div>
-                                        </div>`;
-
-                                    const rightHtml = right ? `
-                                        <div class="page-right">
-                                            <div class="cert-item">
-                                                <div class="cert-header">
-                                                    <span class="cert-category ${right.category}">${right.categoryLabel || ''}</span>
-                                                    <span class="cert-date">${right.year || ''}</span>
-                                                </div>
-                                                <h4>${right.title || ''}</h4>
-                                                <p class="cert-institution">${right.institution || ''}</p>
-                                                <a href="${right.file || '#'}" target="_blank" class="cert-view">Ver certificado →</a>
-                                            </div>
-                                        </div>` : `
-                                        <div class="page-right">
-                                            <div class="cert-item placeholder">
-                                                <p class="placeholder-text">Espacio para más certificados...</p>
-                                            </div>
-                                        </div>`;
-
-                                    const pageHtml = `<div class="book-page">${leftHtml}${rightHtml}</div>`;
-                                    pages.push(pageHtml);
-                                }
-                                pagesContainer.innerHTML = pages.join('\n');
-                                const totalSpan = document.getElementById('totalPages');
-                                if (totalSpan) totalSpan.textContent = pages.length;
-                            }
-                        }
-                    }
-                } catch (e) {
-                    // Si no existe data/certs.json o hay error, se mantiene el contenido estático
-                    console.warn('No se pudieron cargar certificados dinámicos:', e);
-                } finally {
-                    // después de intentar cargar, inicializa la navegación
-                    initBookNavigation();
-                }
-            }
-
-            loadCerts();
-
-            // Función para el desplazamiento suave
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 70,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
             });
-        })();
+        });
     </script>
-    <script src="script.js"></script>
 </body>
-
 </html>
-
-
 
