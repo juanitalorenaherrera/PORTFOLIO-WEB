@@ -222,22 +222,27 @@
         /* Proyectos Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2px; /* Espacio mínimo para simular bordes de cuadrícula */
-            background: var(--border);
-            border: 1px solid var(--border);
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            background: transparent;
+            border: none;
         }
 
         .project-card {
-            background: var(--bg-black);
-            padding: 3rem;
-            transition: background 0.3s;
+            background: var(--bg-card);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         .project-card:hover {
-            background: var(--bg-card);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            background: #161616;
         }
 
         .project-meta {
@@ -374,8 +379,12 @@
                 <span class="dev-tag">Programadora Junior</span>
                 <span class="dev-tag" style="background: transparent; border: 1px solid var(--accent); color: var(--accent);">3 Años de Experiencia</span>
             </div>
-            <h1>Hola soy<br>Juanita Herrera</h1>
+            <h1>Hola, soy<br>Juanita Herrera</h1>
             <p>Transformo ideas en soluciones digitales con un enfoque en la empatía y el impacto social. Con más de 3 años de trayectoria en el ecosistema tecnológico, me especializo en crear experiencias Frontend excepcionales con React.</p>
+            <div class="cta-group" style="justify-content: center;">
+                <a href="https://github.com/juanitalorenaherrera" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/juanita-herrera-329064277/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
         </div>
     </section>
 
@@ -457,7 +466,23 @@
                     <a href="https://juego-secreto-ia.vercel.app/" target="_blank" class="project-link">VER DEMO <i class="fas fa-arrow-up-right-from-square"></i></a>
                 </div>
 
-                <!-- Proyecto 4: PetCare -->
+                <!-- Proyecto 4 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span>2024</span>
+                        <span>UX/UI</span>
+                    </div>
+                    <h3 class="project-title">Banca Digital</h3>
+                    <p class="project-desc">Diseño de interfaz para una plataforma bancaria moderna, realizado durante mi etapa en NoCountry.</p>
+                    <div class="project-tags">
+                        <span class="tag">Figma</span>
+                        <span class="tag">UX Research</span>
+                        <span class="tag">UI Design</span>
+                    </div>
+                    <a href="#" class="project-link">VER CASO DE ESTUDIO <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <!-- Proyecto 5: PetCare -->
                 <div class="project-card">
                     <div class="project-meta">
                         <span>2024</span>
@@ -474,7 +499,7 @@
                     <a href="https://frontend-pet-pay.vercel.app/" target="_blank" class="project-link">VER DEMO <i class="fas fa-arrow-up-right-from-square"></i></a>
                 </div>
 
-                <!-- Proyecto 5: Podcast -->
+                <!-- Proyecto 6: Podcast -->
                 <div class="project-card">
                     <div class="project-meta">
                         <span>2024</span>
@@ -519,87 +544,74 @@
             </div>
             <div class="projects-grid">
                 <!-- Certificado 1 -->
-                <div class="project-card" style="padding: 1.5rem;">
-                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                <div class="project-card">
                     <div class="project-meta"><span>Oracle Cloud</span><span>2024</span></div>
-                    <h3 class="project-title" style="font-size: 1rem;">OCI Foundations Associate</h3>
-                    <p class="project-desc" style="font-size: 0.75rem;">Certificación en fundamentos de cloud computing en Oracle.</p>
+                    <h3 class="project-title" style="font-size: 1.2rem;">OCI Foundations Associate</h3>
+                    <p class="project-desc">Certificación en fundamentos de cloud computing en Oracle.</p>
                     <a href="oracle-cloud-foundations.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
 
                 <!-- Certificado 2 -->
-                <div class="project-card" style="padding: 1.5rem;">
-                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                <div class="project-card">
                     <div class="project-meta"><span>Oracle Cloud</span><span>2024</span></div>
-                    <h3 class="project-title" style="font-size: 1rem;">OCI – Fundamentos</h3>
-                    <p class="project-desc" style="font-size: 0.75rem;">Principios de computación, redes y almacenamiento en OCI.</p>
+                    <h3 class="project-title" style="font-size: 1.2rem;">OCI – Fundamentos</h3>
+                    <p class="project-desc">Principios de computación, redes y almacenamiento en OCI.</p>
                     <a href="oracle-cloud-fundamentos.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
 
                 <!-- Certificado 3 -->
-                <div class="project-card" style="padding: 1.5rem;">
-                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                <div class="project-card">
                     <div class="project-meta"><span>Java / Spring</span><span>2024</span></div>
-                    <h3 class="project-title" style="font-size: 1rem;">Spring Boot 3 – API REST</h3>
-                    <p class="project-desc" style="font-size: 0.75rem;">Creación de APIs REST con Java y Spring Boot.</p>
+                    <h3 class="project-title" style="font-size: 1.2rem;">Spring Boot 3 – API REST</h3>
+                    <p class="project-desc">Creación de APIs REST con Java y Spring Boot.</p>
                     <a href="springboot-api-rest.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
 
                 <!-- Certificado 4 -->
-                <div class="project-card" style="padding: 1.5rem;">
-                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                <div class="project-card">
                     <div class="project-meta"><span>Java / Spring</span><span>2024</span></div>
-                    <h3 class="project-title" style="font-size: 1rem;">Spring Boot – Seguridad en API</h3>
-                    <p class="project-desc" style="font-size: 0.75rem;">Buenas prácticas y validación de datos en backend.</p>
+                    <h3 class="project-title" style="font-size: 1.2rem;">Spring Boot – Seguridad en API</h3>
+                    <p class="project-desc">Buenas prácticas y validación de datos en backend.</p>
                     <a href="springboot-seguridad-api.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
 
                 <!-- Certificado 5 -->
-                <div class="project-card" style="padding: 1.5rem;">
-                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
-                        <img src="java-jpa-persistencia.png" alt="Java JPA" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
-                    </div>
+                <div class="project-card">
                     <div class="project-meta"><span>Java / JPA</span><span>2024</span></div>
-                    <h3 class="project-title" style="font-size: 1rem;">Java – Persistencia con JPA</h3>
-                    <p class="project-desc" style="font-size: 0.75rem;">Gestión de datos usando Spring Data JPA.</p>
+                    <h3 class="project-title" style="font-size: 1.2rem;">Java – Persistencia con JPA</h3>
+                    <p class="project-desc">Gestión de datos usando Spring Data JPA.</p>
                     <a href="java-jpa-persistencia.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
 
                 <!-- Certificado 6 -->
-                <div class="project-card" style="padding: 1.5rem;">
-                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
-                        <img src="java-api-frontend.png" alt="Java API Frontend" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s;">
-                    </div>
+                <div class="project-card">
                     <div class="project-meta"><span>Java / Fullstack</span><span>2024</span></div>
-                    <h3 class="project-title" style="font-size: 1rem;">Java – API conectada al Frontend</h3>
-                    <p class="project-desc" style="font-size: 0.75rem;">Backend conectado a frontend mediante servicios REST.</p>
+                    <h3 class="project-title" style="font-size: 1.2rem;">Java – API conectada al Frontend</h3>
+                    <p class="project-desc">Backend conectado a frontend mediante servicios REST.</p>
                     <a href="java-api-frontend.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
 
                 <!-- Certificado 7 -->
-                <div class="project-card" style="padding: 1.5rem;">
-                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                <div class="project-card">
                     <div class="project-meta"><span>Java / OOP</span><span>2023</span></div>
-                    <h3 class="project-title" style="font-size: 1rem;">Java – Orientación a Objetos</h3>
-                    <p class="project-desc" style="font-size: 0.75rem;">Aplicación de encapsulación, herencia y polimorfismo.</p>
+                    <h3 class="project-title" style="font-size: 1.2rem;">Java – Orientación a Objetos</h3>
+                    <p class="project-desc">Aplicación de encapsulación, herencia y polimorfismo.</p>
                     <a href="java-orientacion-objetos.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
 
                 <!-- Certificado 8 -->
-                <div class="project-card" style="padding: 1.5rem;">
-                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                <div class="project-card">
                     <div class="project-meta"><span>OCI / Security</span><span>2024</span></div>
-                    <h3 class="project-title" style="font-size: 1rem;">OCI – Seguridad y Gobernanza</h3>
-                    <p class="project-desc" style="font-size: 0.75rem;">Gestión de identidades, acceso y seguridad de datos.</p>
+                    <h3 class="project-title" style="font-size: 1.2rem;">OCI – Seguridad y Gobernanza</h3>
+                    <p class="project-desc">Gestión de identidades, acceso y seguridad de datos.</p>
                     <a href="oracle-cloud-seguridad.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
 
                 <!-- Certificado 9 -->
-                <div class="project-card" style="padding: 1.5rem;">
-                    <div style="height: 150px; background: #1a1a1a; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                <div class="project-card">
                     <div class="project-meta"><span>AI / Alura</span><span>2024</span></div>
-                    <h3 class="project-title" style="font-size: 1rem;">Inmersión Agentes de IA</h3>
-                    <p class="project-desc" style="font-size: 0.75rem;">Formación intensiva en agentes de IA y automatización.</p>
+                    <h3 class="project-title" style="font-size: 1.2rem;">Inmersión Agentes de IA</h3>
+                    <p class="project-desc">Formación intensiva en agentes de IA y automatización.</p>
                     <a href="certificado-inmersion-ia.pdf" target="_blank" class="project-link">VER PDF <i class="fas fa-file-pdf"></i></a>
                 </div>
             </div>
@@ -672,4 +684,5 @@
     </script>
 </body>
 </html>
+
 
