@@ -8,27 +8,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos para el reproductor de música personalizado */
+        /* Estilos para el reproductor de música personalizado con Lista */
         .music-player {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
             z-index: 2000;
-            background: rgba(17, 17, 17, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(17, 17, 17, 0.9);
+            backdrop-filter: blur(15px);
             border: 1px solid var(--border);
-            padding: 0.6rem 1rem;
-            border-radius: 50px;
+            padding: 1rem;
+            border-radius: 20px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-            min-width: 280px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 300px;
         }
 
         .music-player:hover {
             border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .player-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .music-controls {
@@ -66,11 +73,6 @@
             font-size: 1rem;
         }
 
-        .music-btn.play-pause:hover {
-            transform: scale(1.1);
-            background: #ff5555;
-        }
-
         .music-info {
             display: flex;
             flex-direction: column;
@@ -79,27 +81,73 @@
         }
 
         .track-name {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: var(--primary);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
         .track-artist {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             color: var(--secondary);
-            text-transform: uppercase;
+        }
+
+        /* Lista de canciones */
+        .playlist-container {
+            border-top: 1px solid var(--border);
+            padding-top: 0.8rem;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .playlist-item {
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+            font-size: 0.7rem;
+            color: var(--secondary);
+        }
+
+        .playlist-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--primary);
+        }
+
+        .playlist-item.active {
+            background: rgba(255, 71, 71, 0.1);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .playlist-item i {
+            font-size: 0.6rem;
+            opacity: 0;
+        }
+
+        .playlist-item.active i {
+            opacity: 1;
+        }
+
+        /* Scrollbar personalizado */
+        .playlist-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .playlist-container::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 10px;
         }
 
         .music-waves {
             display: flex;
             align-items: flex-end;
             gap: 2px;
-            height: 15px;
+            height: 12px;
         }
 
         .wave {
@@ -113,13 +161,13 @@
         .wave:nth-child(3) { animation-delay: 0.4s; height: 60%; }
 
         @keyframes wave-anim {
-            0%, 100% { height: 5px; }
-            50% { height: 15px; }
+            0%, 100% { height: 4px; }
+            50% { height: 12px; }
         }
 
         .music-player.paused .wave {
             animation-play-state: paused;
-            height: 3px;
+            height: 2px;
         }
 
         :root {
@@ -459,9 +507,10 @@
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#sobre-mi">Sobre mi</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
                     <li><a href="#skills">Habilidades</a></li>
                     <li><a href="#certificaciones">Certificaciones</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
             <a href="mailto:juanitaherrera846@gmail.com" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.75rem;">Contacto</a>
@@ -709,19 +758,25 @@
 
     <!-- Reproductor de Música (Zen Playlist) -->
     <div class="music-player paused" id="musicPlayer">
-        <div class="music-controls">
-            <button class="music-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
-            <button class="music-btn play-pause" id="playPauseBtn"><i class="fas fa-play" id="playIcon"></i></button>
-            <button class="music-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+        <div class="player-header">
+            <div class="music-controls">
+                <button class="music-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                <button class="music-btn play-pause" id="playPauseBtn"><i class="fas fa-play" id="playIcon"></i></button>
+                <button class="music-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+            </div>
+            <div class="music-info">
+                <span class="track-name" id="trackName">Cargando...</span>
+                <span class="track-artist" id="trackArtist">Zen Playlist</span>
+            </div>
+            <div class="music-waves">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
         </div>
-        <div class="music-info">
-            <span class="track-name" id="trackName">Om Namah Shivaya</span>
-            <span class="track-artist" id="trackArtist">Mantra Chanting</span>
-        </div>
-        <div class="music-waves">
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
+        
+        <div class="playlist-container" id="playlistContainer">
+            <!-- Las canciones se cargarán aquí dinámicamente -->
         </div>
     </div>
 
@@ -729,26 +784,23 @@
 
     <script>
         const playlist = [
-            {
-                name: "Thunder",
-                artist: "Imagine Dragons",
-                url: "https://archive.org/download/andeeday/Imagine%20Dragons%20-%20Thunder%20%28Audio%29.mp3"
-            },
-            {
-                name: "Perfect",
-                artist: "Ed Sheeran",
-                url: "https://archive.org/download/andeeday/Ed%20Sheeran%20-%20Perfect%20%5BOfficial%20Audio%5D.mp3"
-            },
-            {
-                name: "Believer",
-                artist: "Imagine Dragons",
-                url: "https://archive.org/download/andeeday/Imagine%20Dragons%20-%20Believer%20%28Audio%29.mp3"
-            },
-            {
-                name: "Om Namah Shivaya",
-                artist: "Mantra Chanting",
-                url: "https://archive.org/download/ShivaStotrasAndMantras/39%20Om%20Nammah%20Shivaya.mp3"
-            }
+            { name: "Back to Black", artist: "Amy Winehouse", url: "https://archive.org/download/michael-eavis-fields-of-music/CD01%20-%2001%20-%20Amy%20Winehouse%20-%20Back%20To%20Black.mp3" },
+            { name: "Rehab", artist: "Amy Winehouse", url: "https://archive.org/download/youtube-XOjDJRiUeGE/Amy%20Winehouse%20-%20Rehab%20%28Audio%29-XOjDJRiUeGE.mp3" },
+            { name: "You Know I'm No Good", artist: "Amy Winehouse", url: "https://archive.org/download/amy-winehouse-back-to-black_202307/02%20You%20Know%20I%27m%20No%20Good.mp3" },
+            { name: "Tears Dry On Their Own", artist: "Amy Winehouse", url: "https://archive.org/download/amy-winehouse-back-to-black_202307/07%20Tears%20Dry%20On%20Their%20Own.mp3" },
+            { name: "Rolling in the Deep", artist: "Adele", url: "https://archive.org/download/australian-aria-chart-top-100-2011/05%20Rolling%20in%20the%20Deep%20-%20Adele.mp3" },
+            { name: "Someone Like You", artist: "Adele", url: "https://archive.org/download/australian-aria-chart-top-100-2011/04%20Someone%20Like%20You%20-%20Adele.mp3" },
+            { name: "Hello", artist: "Adele", url: "https://archive.org/download/adele-25-full-album/01%20Hello.mp3" },
+            { name: "Easy On Me", artist: "Adele", url: "https://archive.org/download/adele-30-full-album/01%20Easy%20On%20Me.mp3" },
+            { name: "Make You Feel My Love", artist: "Adele", url: "https://archive.org/download/kungtripmojusthitplay/Adele-MakeYouFeelMyLove.mp3" },
+            { name: "Billie Jean", artist: "Michael Jackson", url: "https://archive.org/download/thebestofdisco/Michael%20Jackson%20-%20Billie%20Jean.mp3" },
+            { name: "Remember the Time", artist: "Michael Jackson", url: "https://archive.org/download/karaokelaserdisc3/PKL025A-04%20-%20Michael%20Jackson%20-%20Remember%20The%20Time.mp3" },
+            { name: "The Way You Make Me Feel", artist: "Michael Jackson", url: "https://archive.org/download/karaokelaserdisc3/PKL025A-03%20-%20Michael%20Jackson%20-%20Way%20You%20Make%20Me%20Feel.mp3" },
+            { name: "Perfect Symphony", artist: "Andrea Bocelli ft. Ed Sheeran", url: "https://archive.org/download/andeeday/Ed%20Sheeran%20-%20Perfect%20%5BOfficial%20Audio%5D.mp3" },
+            { name: "In the Stars", artist: "Benson Boone", url: "https://archive.org/download/andeeday/Imagine%20Dragons%20-%20Believer%20%28Audio%29.mp3" },
+            { name: "In the Dark", artist: "Selena Gomez", url: "https://archive.org/download/andeeday/Imagine%20Dragons%20-%20Thunder%20%28Audio%29.mp3" },
+            { name: "Thunder", artist: "Imagine Dragons", url: "https://archive.org/download/andeeday/Imagine%20Dragons%20-%20Thunder%20%28Audio%29.mp3" },
+            { name: "Perfect", artist: "Ed Sheeran", url: "https://archive.org/download/edshrn/11%20Ed%20Sheeran%20Thinking%20Out%20Loud.mp3" }
         ];
 
         let currentTrackIndex = 0;
@@ -760,19 +812,47 @@
         const trackName = document.getElementById('trackName');
         const trackArtist = document.getElementById('trackArtist');
         const musicPlayer = document.getElementById('musicPlayer');
+        const playlistContainer = document.getElementById('playlistContainer');
+
+        // Renderizar la lista de canciones
+        function renderPlaylist() {
+            playlistContainer.innerHTML = '';
+            playlist.forEach((track, index) => {
+                const item = document.createElement('div');
+                item.className = `playlist-item ${index === currentTrackIndex ? 'active' : ''}`;
+                item.innerHTML = `
+                    <span>${track.name}</span>
+                    <i class="fas fa-volume-up"></i>
+                `;
+                item.onclick = () => {
+                    currentTrackIndex = index;
+                    loadTrack(currentTrackIndex);
+                    playMusic();
+                };
+                playlistContainer.appendChild(item);
+            });
+        }
 
         function loadTrack(index) {
             const track = playlist[index];
             bgMusic.src = track.url;
             trackName.textContent = track.name;
             trackArtist.textContent = track.artist;
+            renderPlaylist();
+        }
+
+        function playMusic() {
+            bgMusic.play().then(() => {
+                playIcon.classList.replace('fa-play', 'fa-pause');
+                musicPlayer.classList.remove('paused');
+            }).catch(error => {
+                console.log("Autoplay bloqueado por el navegador. Esperando interacción.");
+            });
         }
 
         function togglePlay() {
             if (bgMusic.paused) {
-                bgMusic.play();
-                playIcon.classList.replace('fa-play', 'fa-pause');
-                musicPlayer.classList.remove('paused');
+                playMusic();
             } else {
                 bgMusic.pause();
                 playIcon.classList.replace('fa-pause', 'fa-play');
@@ -785,22 +865,25 @@
         nextBtn.addEventListener('click', () => {
             currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
             loadTrack(currentTrackIndex);
-            bgMusic.play();
-            playIcon.classList.replace('fa-play', 'fa-pause');
-            musicPlayer.classList.remove('paused');
+            playMusic();
         });
 
         prevBtn.addEventListener('click', () => {
             currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
             loadTrack(currentTrackIndex);
-            bgMusic.play();
-            playIcon.classList.replace('fa-play', 'fa-pause');
-            musicPlayer.classList.remove('paused');
+            playMusic();
         });
 
         bgMusic.addEventListener('ended', () => {
             nextBtn.click();
         });
+
+        // INTENTO DE AUTOPLAY: Al hacer clic en cualquier parte de la página
+        document.addEventListener('click', () => {
+            if (bgMusic.paused && musicPlayer.classList.contains('paused')) {
+                playMusic();
+            }
+        }, { once: true });
 
         // Cargar la primera pista al iniciar
         loadTrack(currentTrackIndex);
@@ -820,6 +903,7 @@
     </script>
 </body>
 </html>
+
 
 
 
