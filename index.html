@@ -510,7 +510,6 @@
                     <li><a href="#sobre-mi">Sobre mí</a></li>
                     <li><a href="#skills">Habilidades</a></li>
                     <li><a href="#certificaciones">Certificaciones</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
             <a href="mailto:juanitaherrera846@gmail.com" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.75rem;">Contacto</a>
@@ -712,43 +711,7 @@
         </div>
     </section>
 
-    <section id="contacto" class="section">
-        <div class="container">
-            <div class="section-header" style="text-align: center;">
-                <span class="section-tag">Contacto</span>
-                <h2 class="section-title">¿Hablamos?</h2>
-                <p style="color: var(--secondary); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Estoy abierta a nuevas oportunidades y colaboraciones. La forma más segura y rápida de contactarme es a través de mi correo o LinkedIn.
-                </p>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
-                <a href="mailto:juanitaherrera846@gmail.com" class="project-card" style="text-decoration: none; align-items: center; padding: 2.5rem;">
-                    <i class="fas fa-envelope" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                    <span style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Email</span>
-                    <span style="color: var(--secondary); font-size: 0.85rem;">juanitaherrera846@gmail.com</span>
-                </a>
-                <a href="https://www.linkedin.com/in/juanita-herrera-329064277/" target="_blank" class="project-card" style="text-decoration: none; align-items: center; padding: 2.5rem;">
-                    <i class="fab fa-linkedin" style="font-size: 2rem; color: #0077b5; margin-bottom: 1rem;"></i>
-                    <span style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">LinkedIn</span>
-                    <span style="color: var(--secondary); font-size: 0.85rem;">Conectemos profesionalmente</span>
-                </a>
-                <a href="https://github.com/juanitalorenaherrera" target="_blank" class="project-card" style="text-decoration: none; align-items: center; padding: 2.5rem;">
-                    <i class="fab fa-github" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                    <span style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">GitHub</span>
-                    <span style="color: var(--secondary); font-size: 0.85rem;">Mira mis repositorios</span>
-                </a>
-            </div>
 
-            <div style="margin-top: 4rem; text-align: center; padding: 2rem; border: 1px dashed var(--border); border-radius: 12px;">
-                <p style="color: var(--secondary); font-size: 0.9rem;">
-                    <i class="fas fa-shield-alt" style="margin-right: 0.5rem; color: var(--accent);"></i> 
-                    Por seguridad y para evitar spam, no comparto mi número de teléfono públicamente. <br>
-                    ¡Escríbeme por LinkedIn y con gusto coordinamos una llamada!
-                </p>
-            </div>
-        </div>
-    </section>
 
     <footer>
         <div class="container">
@@ -768,6 +731,11 @@
                 <span class="track-name" id="trackName">Cargando...</span>
                 <span class="track-artist" id="trackArtist">Zen Playlist</span>
             </div>
+            <div class="volume-control" style="display: flex; align-items: center; gap: 8px; margin-left: 10px;">
+                <i class="fas fa-volume-down" style="font-size: 0.7rem; color: var(--secondary);"></i>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5" style="width: 60px; accent-color: var(--accent); cursor: pointer;">
+                <i class="fas fa-volume-up" style="font-size: 0.7rem; color: var(--secondary);"></i>
+            </div>
             <div class="music-waves">
                 <div class="wave"></div>
                 <div class="wave"></div>
@@ -784,23 +752,13 @@
 
     <script>
         const playlist = [
-            { name: "Back to Black", artist: "Amy Winehouse", url: "https://archive.org/download/michael-eavis-fields-of-music/CD01%20-%2001%20-%20Amy%20Winehouse%20-%20Back%20To%20Black.mp3" },
-            { name: "Rehab", artist: "Amy Winehouse", url: "https://archive.org/download/youtube-XOjDJRiUeGE/Amy%20Winehouse%20-%20Rehab%20%28Audio%29-XOjDJRiUeGE.mp3" },
-            { name: "You Know I'm No Good", artist: "Amy Winehouse", url: "https://archive.org/download/amy-winehouse-back-to-black_202307/02%20You%20Know%20I%27m%20No%20Good.mp3" },
-            { name: "Tears Dry On Their Own", artist: "Amy Winehouse", url: "https://archive.org/download/amy-winehouse-back-to-black_202307/07%20Tears%20Dry%20On%20Their%20Own.mp3" },
             { name: "Rolling in the Deep", artist: "Adele", url: "https://archive.org/download/australian-aria-chart-top-100-2011/05%20Rolling%20in%20the%20Deep%20-%20Adele.mp3" },
             { name: "Someone Like You", artist: "Adele", url: "https://archive.org/download/australian-aria-chart-top-100-2011/04%20Someone%20Like%20You%20-%20Adele.mp3" },
+            { name: "Set Fire to the Rain", artist: "Adele", url: "https://archive.org/download/adele-21-full-album/05%20Set%20Fire%20To%20The%20Rain.mp3" },
             { name: "Hello", artist: "Adele", url: "https://archive.org/download/adele-25-full-album/01%20Hello.mp3" },
+            { name: "When We Were Young", artist: "Adele", url: "https://archive.org/download/adele-25-full-album/04%20When%20We%20Were%20Young.mp3" },
             { name: "Easy On Me", artist: "Adele", url: "https://archive.org/download/adele-30-full-album/01%20Easy%20On%20Me.mp3" },
-            { name: "Make You Feel My Love", artist: "Adele", url: "https://archive.org/download/kungtripmojusthitplay/Adele-MakeYouFeelMyLove.mp3" },
-            { name: "Billie Jean", artist: "Michael Jackson", url: "https://archive.org/download/thebestofdisco/Michael%20Jackson%20-%20Billie%20Jean.mp3" },
-            { name: "Remember the Time", artist: "Michael Jackson", url: "https://archive.org/download/karaokelaserdisc3/PKL025A-04%20-%20Michael%20Jackson%20-%20Remember%20The%20Time.mp3" },
-            { name: "The Way You Make Me Feel", artist: "Michael Jackson", url: "https://archive.org/download/karaokelaserdisc3/PKL025A-03%20-%20Michael%20Jackson%20-%20Way%20You%20Make%20Me%20Feel.mp3" },
-            { name: "Perfect Symphony", artist: "Andrea Bocelli ft. Ed Sheeran", url: "https://archive.org/download/andeeday/Ed%20Sheeran%20-%20Perfect%20%5BOfficial%20Audio%5D.mp3" },
-            { name: "In the Stars", artist: "Benson Boone", url: "https://archive.org/download/andeeday/Imagine%20Dragons%20-%20Believer%20%28Audio%29.mp3" },
-            { name: "In the Dark", artist: "Selena Gomez", url: "https://archive.org/download/andeeday/Imagine%20Dragons%20-%20Thunder%20%28Audio%29.mp3" },
-            { name: "Thunder", artist: "Imagine Dragons", url: "https://archive.org/download/andeeday/Imagine%20Dragons%20-%20Thunder%20%28Audio%29.mp3" },
-            { name: "Perfect", artist: "Ed Sheeran", url: "https://archive.org/download/edshrn/11%20Ed%20Sheeran%20Thinking%20Out%20Loud.mp3" }
+            { name: "Make You Feel My Love", artist: "Adele", url: "https://archive.org/download/kungtripmojusthitplay/Adele-MakeYouFeelMyLove.mp3" }
         ];
 
         let currentTrackIndex = 0;
@@ -813,6 +771,12 @@
         const trackArtist = document.getElementById('trackArtist');
         const musicPlayer = document.getElementById('musicPlayer');
         const playlistContainer = document.getElementById('playlistContainer');
+        const volumeSlider = document.getElementById('volumeSlider');
+
+        // Control de volumen
+        volumeSlider.addEventListener('input', (e) => {
+            bgMusic.volume = e.target.value;
+        });
 
         // Renderizar la lista de canciones
         function renderPlaylist() {
